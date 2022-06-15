@@ -16,11 +16,7 @@
     height: 13px;
     color: #6B7280;
 }
-.switch-product-panel-icon svg{
-    fill: #f97316;
-    width:13px;
-    height: 13px;
-}
+
 .sidebar{
     padding: 70px 0 0 0;
     z-index: -1;

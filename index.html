@@ -23,7 +23,7 @@
                         <img src="assets/img/logo.png" alt="">
                     </a>
                 </div>
-                <div class="header-search ml-7 relative">
+                <div class="header-search ml-7 relative hidden md:block">
                     <input type="text" class="rounded-lg px-10 py-2 border focus:outline-none" placeholder="Search">
                     <div class="search-input-icon absolute top-1/2 left-5">
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -31,27 +31,32 @@
                 </div>
             </div>
             <div class="header-user-action flex items-center">
-                <div class="switch-product-panel p-2">
-                   <a href="javascrip:;" class="flex flex-row items-center justify-center">
-                    <div class="switch-product-panel-icon">
-                        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.00003 5C7.73481 5 7.48046 5.10535 7.29292 5.29289C7.10539 5.48043 7.00003 5.73478 7.00003 6C7.00003 6.26521 7.10539 6.51957 7.29292 6.7071C7.48046 6.89464 7.73481 7 8.00003 7H13.586L12.293 8.293C12.1109 8.4816 12.0101 8.7342 12.0124 8.9964C12.0146 9.25859 12.1198 9.50941 12.3052 9.69482C12.4906 9.88022 12.7414 9.98539 13.0036 9.98767C13.2658 9.98995 13.5184 9.88915 13.707 9.707L16.707 6.707C16.8945 6.51947 16.9998 6.26516 16.9998 6C16.9998 5.73483 16.8945 5.48053 16.707 5.293L13.707 2.293C13.6148 2.19749 13.5044 2.1213 13.3824 2.0689C13.2604 2.01649 13.1292 1.9889 12.9964 1.98775C12.8637 1.98659 12.732 2.01189 12.6091 2.06218C12.4862 2.11246 12.3745 2.18671 12.2806 2.2806C12.1867 2.37449 12.1125 2.48615 12.0622 2.60904C12.0119 2.73194 11.9866 2.86362 11.9878 2.9964C11.9889 3.12918 12.0165 3.2604 12.0689 3.3824C12.1213 3.50441 12.1975 3.61475 12.293 3.707L13.586 5H8.00003ZM12 15C12.2652 15 12.5196 14.8946 12.7071 14.7071C12.8947 14.5196 13 14.2652 13 14C13 13.7348 12.8947 13.4804 12.7071 13.2929C12.5196 13.1054 12.2652 13 12 13H6.41403L7.70703 11.707C7.80254 11.6147 7.87872 11.5044 7.93113 11.3824C7.98354 11.2604 8.01113 11.1292 8.01228 10.9964C8.01344 10.8636 7.98813 10.7319 7.93785 10.609C7.88757 10.4861 7.81332 10.3745 7.71943 10.2806C7.62553 10.1867 7.51388 10.1125 7.39098 10.0622C7.26809 10.0119 7.13641 9.98659 7.00363 9.98775C6.87085 9.9889 6.73963 10.0165 6.61763 10.0689C6.49562 10.1213 6.38528 10.1975 6.29303 10.293L3.29303 13.293C3.10556 13.4805 3.00024 13.7348 3.00024 14C3.00024 14.2652 3.10556 14.5195 3.29303 14.707L6.29303 17.707C6.48163 17.8892 6.73424 17.99 6.99643 17.9877C7.25863 17.9854 7.50944 17.8802 7.69485 17.6948C7.88026 17.5094 7.98543 17.2586 7.9877 16.9964C7.98998 16.7342 7.88919 16.4816 7.70703 16.293L6.41403 15H12Z" />
-                            </svg> 
-                       </div> 
-                        <div class="switch-product-panel-text ml-2 text-xs">
-                            <span class="block text-orange-600">Switch to Producer Panel</span> 
-                        </div>  
-                   </a>                       
-                </div>
-                <div class="notification-icon p-2">
-                    <svg class="fill-gray-500" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 2C8.40873 2 6.88261 2.63214 5.75739 3.75736C4.63217 4.88258 4.00003 6.4087 4.00003 8V11.586L3.29303 12.293C3.15322 12.4329 3.05802 12.611 3.01945 12.805C2.98088 12.9989 3.00068 13.2 3.07635 13.3827C3.15202 13.5654 3.28016 13.7215 3.44457 13.8314C3.60898 13.9413 3.80228 14 4.00003 14H16C16.1978 14 16.3911 13.9413 16.5555 13.8314C16.7199 13.7215 16.848 13.5654 16.9237 13.3827C16.9994 13.2 17.0192 12.9989 16.9806 12.805C16.942 12.611 16.8468 12.4329 16.707 12.293L16 11.586V8C16 6.4087 15.3679 4.88258 14.2427 3.75736C13.1175 2.63214 11.5913 2 10 2ZM10 18C9.20438 18 8.44132 17.6839 7.87871 17.1213C7.3161 16.5587 7.00003 15.7956 7.00003 15H13C13 15.7956 12.684 16.5587 12.1214 17.1213C11.5587 17.6839 10.7957 18 10 18Z"/>
-                        </svg>
-                        
-                </div>
-                <div class="user-img w-8 h-8 rounded-full ml-2">
-                    <img src="assets/img/avatar.png" alt="">
-                </div>
+                <ul class="flex items-center">
+                    <li>
+                        <a href="javascrip:;" class="flex flex-row items-center justify-center">
+                            <div class="switch-product-panel-icon">
+                                <svg class="w-4 h-4 fill-orange-600" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.00003 5C7.73481 5 7.48046 5.10535 7.29292 5.29289C7.10539 5.48043 7.00003 5.73478 7.00003 6C7.00003 6.26521 7.10539 6.51957 7.29292 6.7071C7.48046 6.89464 7.73481 7 8.00003 7H13.586L12.293 8.293C12.1109 8.4816 12.0101 8.7342 12.0124 8.9964C12.0146 9.25859 12.1198 9.50941 12.3052 9.69482C12.4906 9.88022 12.7414 9.98539 13.0036 9.98767C13.2658 9.98995 13.5184 9.88915 13.707 9.707L16.707 6.707C16.8945 6.51947 16.9998 6.26516 16.9998 6C16.9998 5.73483 16.8945 5.48053 16.707 5.293L13.707 2.293C13.6148 2.19749 13.5044 2.1213 13.3824 2.0689C13.2604 2.01649 13.1292 1.9889 12.9964 1.98775C12.8637 1.98659 12.732 2.01189 12.6091 2.06218C12.4862 2.11246 12.3745 2.18671 12.2806 2.2806C12.1867 2.37449 12.1125 2.48615 12.0622 2.60904C12.0119 2.73194 11.9866 2.86362 11.9878 2.9964C11.9889 3.12918 12.0165 3.2604 12.0689 3.3824C12.1213 3.50441 12.1975 3.61475 12.293 3.707L13.586 5H8.00003ZM12 15C12.2652 15 12.5196 14.8946 12.7071 14.7071C12.8947 14.5196 13 14.2652 13 14C13 13.7348 12.8947 13.4804 12.7071 13.2929C12.5196 13.1054 12.2652 13 12 13H6.41403L7.70703 11.707C7.80254 11.6147 7.87872 11.5044 7.93113 11.3824C7.98354 11.2604 8.01113 11.1292 8.01228 10.9964C8.01344 10.8636 7.98813 10.7319 7.93785 10.609C7.88757 10.4861 7.81332 10.3745 7.71943 10.2806C7.62553 10.1867 7.51388 10.1125 7.39098 10.0622C7.26809 10.0119 7.13641 9.98659 7.00363 9.98775C6.87085 9.9889 6.73963 10.0165 6.61763 10.0689C6.49562 10.1213 6.38528 10.1975 6.29303 10.293L3.29303 13.293C3.10556 13.4805 3.00024 13.7348 3.00024 14C3.00024 14.2652 3.10556 14.5195 3.29303 14.707L6.29303 17.707C6.48163 17.8892 6.73424 17.99 6.99643 17.9877C7.25863 17.9854 7.50944 17.8802 7.69485 17.6948C7.88026 17.5094 7.98543 17.2586 7.9877 16.9964C7.98998 16.7342 7.88919 16.4816 7.70703 16.293L6.41403 15H12Z" />
+                                </svg> 
+                            </div> 
+                            <div class="switch-product-panel-text ml-2 text-xs hidden md:block">
+                                <span class="block text-orange-600">Switch to Producer Panel</span> 
+                            </div>  
+                       </a>         
+                    </li>
+                    <li class="ml-2 flex items-center justify-center">
+                        <button type="button">
+                            <svg class="fill-gray-500" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 2C8.40873 2 6.88261 2.63214 5.75739 3.75736C4.63217 4.88258 4.00003 6.4087 4.00003 8V11.586L3.29303 12.293C3.15322 12.4329 3.05802 12.611 3.01945 12.805C2.98088 12.9989 3.00068 13.2 3.07635 13.3827C3.15202 13.5654 3.28016 13.7215 3.44457 13.8314C3.60898 13.9413 3.80228 14 4.00003 14H16C16.1978 14 16.3911 13.9413 16.5555 13.8314C16.7199 13.7215 16.848 13.5654 16.9237 13.3827C16.9994 13.2 17.0192 12.9989 16.9806 12.805C16.942 12.611 16.8468 12.4329 16.707 12.293L16 11.586V8C16 6.4087 15.3679 4.88258 14.2427 3.75736C13.1175 2.63214 11.5913 2 10 2ZM10 18C9.20438 18 8.44132 17.6839 7.87871 17.1213C7.3161 16.5587 7.00003 15.7956 7.00003 15H13C13 15.7956 12.684 16.5587 12.1214 17.1213C11.5587 17.6839 10.7957 18 10 18Z"/>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="ml-2 flex items-center justify-center">
+                        <button type="button" class="w-8 h-8">
+                            <img class="w-full h-full object-cover shrink-0 whitespace-nowrap" src="assets/img/avatar.png" alt="">
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
     </header>
@@ -252,94 +257,99 @@
                 <div class="content-head">
                     <h1 class="text-2xl text-gray-900 font-medium">Orders</h1>
                 </div>
-                <div class="filter-menu mt-2 flex items-center justify-between">
-                    <div class="filter-menu-left flex items-center w-1/2">
-                        <div class="sort-filter relative inline-block w-1/5">
-                            <select id="selectby" class="w-full bg-white border border-orange-600 text-orange-600 text-sm rounded-lg focus:outline-none block w-full p-2.5">
-                                <option selected disabled hidden >Selected</option>
-                                <option value="Lorem İpsum">Lorem İpsum</option>
-                                <option value="Lorem İpsum">Lorem İpsum</option>
-                                <option value="Lorem İpsum">Lorem İpsum</option>
-                                <option value="Lorem İpsum">Lorem İpsum</option>
-                            </select>
-                            <div class="select-icon absolute top-1/2 right-0">
-                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                            </div>
-                        </div>
-                        <div class="filter-menu-left-search-input ml-2 w-2/5">
-                            <input type="text" class="w-full sm:text-sm rounded-lg pl-5 p-2.5 border focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Search in Orders">
-                        </div>
-                        <div class="filter-menu-left-date-input relative ml-2 w-2/5">
-                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                <svg class="w-5 h-5 text-gray-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-                              </div>
-                              <input datepicker datepicker-autohide type="text" class="focus:outline-none bg-white border text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder="Select date">
-                        </div>
+                <div class="filter-menu mt-5 xl:flex xl:items-center xl:justify-between lg:flex-col xl:flex-row">
+                    <div class="filter-menu-left xl:w-1/2 w-full">
+                        <ul class="xl:flex xl:items-center xl:justify-between xl:flex-nowrap md:flex md:flex-wrap xl:flex-row sm:flex-wrap sm:flex">
+                            <li class="sm:w-1/2 lg:w-1/3 w-full">
+                                <select id="selectby" class="w-full bg-white border border-orange-600 text-orange-600 text-sm rounded-lg focus:outline-none block w-full p-2.5">
+                                    <option selected disabled hidden >Sort By...</option>
+                                    <option value="Lorem İpsum">Lorem İpsum</option>
+                                    <option value="Lorem İpsum">Lorem İpsum</option>
+                                    <option value="Lorem İpsum">Lorem İpsum</option>
+                                    <option value="Lorem İpsum">Lorem İpsum</option>
+                                </select>
+                                <div class="select-icon absolute top-1/2 right-0">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                            </li>
+                            <li class="sm:w-1/2 sm:mt-0 sm:pl-2 lg:w-1/3 lg:pl-2 w-full mt-2">
+                                <input type="text" class="w-full sm:text-sm rounded-lg pl-5 p-2.5 border focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Search in Orders">
+                            </li>
+                            <li class="sm:w-full lg:w-1/3 lg:mt-0 lg:pl-2 relative w-full mt-2">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg class="w-5 h-5 text-gray-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                </div>
+                                <input datepicker datepicker-autohide type="text" class="focus:outline-none bg-white border text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder="Select date">
+                            </li>
+                        </ul>
                     </div>
-                    <div class="filter-menu-right flex items-center w-1/2 ml-2">
-                        <div class="new-order-btn w-1/5">
-                            <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
-                                <svg class="mr-2 w-4 h-4" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                                New Order
-                            </button>
-                        </div>
-                        <div class="filter-btn ml-2 w-1/5">
-                            <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
-                                <svg class="mr-2 w-4 h-4" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-                                Filter
-                            </button>
-                        </div>
-                        <div class="import-btn ml-2 w-1/5">
-                            <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
-                                <svg class="mr-2 w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3999 13.6C2.3999 13.3878 2.48419 13.1843 2.63422 13.0343C2.78425 12.8843 2.98773 12.8 3.1999 12.8H12.7999C13.0121 12.8 13.2156 12.8843 13.3656 13.0343C13.5156 13.1843 13.5999 13.3878 13.5999 13.6C13.5999 13.8122 13.5156 14.0157 13.3656 14.1657C13.2156 14.3157 13.0121 14.4 12.7999 14.4H3.1999C2.98773 14.4 2.78425 14.3157 2.63422 14.1657C2.48419 14.0157 2.3999 13.8122 2.3999 13.6ZM5.0343 5.3656C4.88433 5.21558 4.80007 5.01213 4.80007 4.8C4.80007 4.58787 4.88433 4.38443 5.0343 4.2344L7.4343 1.8344C7.58433 1.68443 7.78777 1.60017 7.9999 1.60017C8.21203 1.60017 8.41548 1.68443 8.5655 1.8344L10.9655 4.2344C11.1112 4.38528 11.1919 4.58737 11.19 4.79712C11.1882 5.00688 11.1041 5.20753 10.9558 5.35586C10.8074 5.50418 10.6068 5.58832 10.397 5.59014C10.1873 5.59196 9.98519 5.51133 9.8343 5.3656L8.7999 4.3312V10.4C8.7999 10.6122 8.71562 10.8157 8.56559 10.9657C8.41556 11.1157 8.21208 11.2 7.9999 11.2C7.78773 11.2 7.58425 11.1157 7.43422 10.9657C7.28419 10.8157 7.1999 10.6122 7.1999 10.4V4.3312L6.1655 5.3656C6.01548 5.51558 5.81203 5.59983 5.5999 5.59983C5.38777 5.59983 5.18432 5.51558 5.0343 5.3656Z" fill="white"/>
-                                </svg>
-                                İmport
-                            </button>
-                        </div>
-                        <div class="export-btn ml-2 w-1/5">
-                            <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3999 13.6C2.3999 13.3878 2.48419 13.1843 2.63422 13.0343C2.78425 12.8843 2.98773 12.8 3.1999 12.8H12.7999C13.0121 12.8 13.2156 12.8843 13.3656 13.0343C13.5156 13.1843 13.5999 13.3878 13.5999 13.6C13.5999 13.8122 13.5156 14.0157 13.3656 14.1657C13.2156 14.3157 13.0121 14.4 12.7999 14.4H3.1999C2.98773 14.4 2.78425 14.3157 2.63422 14.1657C2.48419 14.0157 2.3999 13.8122 2.3999 13.6ZM5.0343 7.43441C5.18432 7.28443 5.38777 7.20018 5.5999 7.20018C5.81203 7.20018 6.01548 7.28443 6.1655 7.43441L7.1999 8.46881V2.40001C7.1999 2.18783 7.28419 1.98435 7.43422 1.83432C7.58425 1.68429 7.78773 1.60001 7.9999 1.60001C8.21208 1.60001 8.41556 1.68429 8.56559 1.83432C8.71562 1.98435 8.7999 2.18783 8.7999 2.40001V8.46881L9.8343 7.43441C9.9081 7.358 9.99638 7.29705 10.094 7.25512C10.1916 7.2132 10.2966 7.19113 10.4028 7.19021C10.509 7.18928 10.6143 7.20952 10.7127 7.24975C10.811 7.28997 10.9003 7.34938 10.9754 7.42449C11.0505 7.4996 11.1099 7.58893 11.1502 7.68724C11.1904 7.78556 11.2106 7.8909 11.2097 7.99713C11.2088 8.10335 11.1867 8.20833 11.1448 8.30593C11.1029 8.40353 11.0419 8.49181 10.9655 8.56561L8.5655 10.9656C8.41548 11.1156 8.21203 11.1998 7.9999 11.1998C7.78777 11.1998 7.58433 11.1156 7.4343 10.9656L5.0343 8.56561C4.88433 8.41558 4.80007 8.21214 4.80007 8.00001C4.80007 7.78787 4.88433 7.58443 5.0343 7.43441V7.43441Z" fill="white"/>
-                                </svg>  
-                                Export
-                            </button>
-                        </div>
-                        <div class="select-order-btn w-1/5 ml-2">
-                            <select id="selected" class="w-full bg-white border border-orange-600 text-orange-600 text-sm rounded-lg focus:outline-none block w-full p-2.5">
-                                <option selected disabled hidden >Selected</option>
-                                <option value="Lorem İpsum">Lorem İpsum</option>
-                                <option value="Lorem İpsum">Lorem İpsum</option>
-                                <option value="Lorem İpsum">Lorem İpsum</option>
-                                <option value="Lorem İpsum">Lorem İpsum</option>
-                            </select>
-                        </div>
+                    
+                    <div class="filter-menu-right xl:w-1/2 w-full xl:ml-2 xl:mt-0 mt-5">
+                        <ul class="xl:flex xl:items-center xl:justify-between xl:flex-nowrap md:flex md:flex-wrap xl:flex-row sm:flex-wrap sm:flex">
+                            <li class="xl:w-full xl:ml-2 xl:p-0 lg:w-1/5 md:w-1/3 sm:w-1/3 sm:p-2 mt-2 md:mt-0 w-full">
+                                <button type="button" class="whitespace-nowrap w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
+                                    <svg class="mr-2 w-4 h-4 shrink-0" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                    New Order
+                                </button>
+                            </li>
+                            <li class="xl:w-full xl:ml-2 xl:p-0 lg:w-1/5 md:w-1/3 sm:w-1/3 sm:p-2 mt-2 md:mt-0 w-full">
+                                <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
+                                    <svg class="mr-2 w-4 h-4" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                                    Filter
+                                </button>
+                            </li>
+                            <li class="xl:w-full xl:ml-2 xl:p-0 lg:w-1/5 md:w-1/3 sm:w-1/3 sm:p-2 mt-2 md:mt-0 w-full">
+                                <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
+                                    <svg class="mr-2 w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3999 13.6C2.3999 13.3878 2.48419 13.1843 2.63422 13.0343C2.78425 12.8843 2.98773 12.8 3.1999 12.8H12.7999C13.0121 12.8 13.2156 12.8843 13.3656 13.0343C13.5156 13.1843 13.5999 13.3878 13.5999 13.6C13.5999 13.8122 13.5156 14.0157 13.3656 14.1657C13.2156 14.3157 13.0121 14.4 12.7999 14.4H3.1999C2.98773 14.4 2.78425 14.3157 2.63422 14.1657C2.48419 14.0157 2.3999 13.8122 2.3999 13.6ZM5.0343 5.3656C4.88433 5.21558 4.80007 5.01213 4.80007 4.8C4.80007 4.58787 4.88433 4.38443 5.0343 4.2344L7.4343 1.8344C7.58433 1.68443 7.78777 1.60017 7.9999 1.60017C8.21203 1.60017 8.41548 1.68443 8.5655 1.8344L10.9655 4.2344C11.1112 4.38528 11.1919 4.58737 11.19 4.79712C11.1882 5.00688 11.1041 5.20753 10.9558 5.35586C10.8074 5.50418 10.6068 5.58832 10.397 5.59014C10.1873 5.59196 9.98519 5.51133 9.8343 5.3656L8.7999 4.3312V10.4C8.7999 10.6122 8.71562 10.8157 8.56559 10.9657C8.41556 11.1157 8.21208 11.2 7.9999 11.2C7.78773 11.2 7.58425 11.1157 7.43422 10.9657C7.28419 10.8157 7.1999 10.6122 7.1999 10.4V4.3312L6.1655 5.3656C6.01548 5.51558 5.81203 5.59983 5.5999 5.59983C5.38777 5.59983 5.18432 5.51558 5.0343 5.3656Z" fill="white"/>
+                                    </svg>
+                                    İmport
+                                </button>
+                            </li>
+                            <li class="xl:w-full xl:ml-2 xl:p-0 lg:w-1/5 md:w-1/2 sm:w-1/2 sm:p-2 mt-2 md:mt-0 w-full">
+                                <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3999 13.6C2.3999 13.3878 2.48419 13.1843 2.63422 13.0343C2.78425 12.8843 2.98773 12.8 3.1999 12.8H12.7999C13.0121 12.8 13.2156 12.8843 13.3656 13.0343C13.5156 13.1843 13.5999 13.3878 13.5999 13.6C13.5999 13.8122 13.5156 14.0157 13.3656 14.1657C13.2156 14.3157 13.0121 14.4 12.7999 14.4H3.1999C2.98773 14.4 2.78425 14.3157 2.63422 14.1657C2.48419 14.0157 2.3999 13.8122 2.3999 13.6ZM5.0343 7.43441C5.18432 7.28443 5.38777 7.20018 5.5999 7.20018C5.81203 7.20018 6.01548 7.28443 6.1655 7.43441L7.1999 8.46881V2.40001C7.1999 2.18783 7.28419 1.98435 7.43422 1.83432C7.58425 1.68429 7.78773 1.60001 7.9999 1.60001C8.21208 1.60001 8.41556 1.68429 8.56559 1.83432C8.71562 1.98435 8.7999 2.18783 8.7999 2.40001V8.46881L9.8343 7.43441C9.9081 7.358 9.99638 7.29705 10.094 7.25512C10.1916 7.2132 10.2966 7.19113 10.4028 7.19021C10.509 7.18928 10.6143 7.20952 10.7127 7.24975C10.811 7.28997 10.9003 7.34938 10.9754 7.42449C11.0505 7.4996 11.1099 7.58893 11.1502 7.68724C11.1904 7.78556 11.2106 7.8909 11.2097 7.99713C11.2088 8.10335 11.1867 8.20833 11.1448 8.30593C11.1029 8.40353 11.0419 8.49181 10.9655 8.56561L8.5655 10.9656C8.41548 11.1156 8.21203 11.1998 7.9999 11.1998C7.78777 11.1998 7.58433 11.1156 7.4343 10.9656L5.0343 8.56561C4.88433 8.41558 4.80007 8.21214 4.80007 8.00001C4.80007 7.78787 4.88433 7.58443 5.0343 7.43441V7.43441Z" fill="white"/>
+                                    </svg>  
+                                    Export
+                                </button>
+                            </li>
+                            <li class="xl:w-full xl:ml-2 xl:p-0 lg:w-1/5 md:w-1/2 sm:w-1/2 sm:p-2 mt-2 md:mt-0 w-full">
+                                <select id="selected" class="shrink-0 whitespace-nowrap w-full bg-white border border-orange-600 text-orange-600 text-sm rounded-lg focus:outline-none block w-full p-2.5">
+                                    <option selected disabled hidden >Selected</option>
+                                    <option value="Lorem İpsum">Lorem İpsum</option>
+                                    <option value="Lorem İpsum">Lorem İpsum</option>
+                                    <option value="Lorem İpsum">Lorem İpsum</option>
+                                    <option value="Lorem İpsum">Lorem İpsum</option>
+                                </select>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="content-top-tab-items mt-5">
-                    <ul class="flex items-center justify-between">
-                        <li class="w-full text-center">
-                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">All</button>
+                    <ul class="xl:flex xl:items-center xl:justify-between xl:flex-nowrap md:flex md:flex-wrap xl:flex-row sm:flex-wrap sm:flex">
+                        <li class="sm:w-1/3 inline-block w-full text-center">
+                            <button type="button" class=" py-3 inline-block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">All</button>
                         </li>
-                        <li class="w-full text-center">
-                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Awaiting Connection (4)</button>
+                        <li class="sm:w-1/3 inline-block w-full text-center">
+                            <button type="button" class=" py-3 inline-block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Awaiting Connection (4)</button>
                         </li>
-                        <li class="w-full text-center">
-                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Awaiting Confirmation (16) </button>
+                        <li class="sm:w-1/3 inline-block w-full text-center">
+                            <button type="button" class=" py-3 inline-block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Awaiting Confirmation (16) </button>
                         </li>
-                        <li class="w-full text-center">
-                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Needs Attention (1) </button>
+                        <li class="sm:w-1/3 inline-block w-full text-center">
+                            <button type="button" class=" py-3 inline-block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Needs Attention (1) </button>
                         </li>
-                        <li class="w-full text-center">
-                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">In Production (22) </button>
+                        <li class="sm:w-1/3 inline-block w-full text-center">
+                            <button type="button" class=" py-3 inline-block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">In Production (22) </button>
                         </li>
-                        <li class="w-full text-center">
-                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Ready to Ship (2)</button>
+                        <li class="sm:w-1/3 inline-block w-full text-center">
+                            <button type="button" class=" py-3 inline-block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Ready to Ship (2)</button>
                         </li>
-                        <li class="w-full text-center">
-                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Shipped (29)</button>
+                        <li class="sm:w-1/3 inline-block w-full text-center">
+                            <button type="button" class=" py-3 inline-block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Shipped (29)</button>
                         </li>
-                        <li class="w-full text-center">
+                        <li class="sm:w-1/3 inline-block w-full text-center">
                             <button type="button" class="flex items-center justify-center text-center w-full py-3 text-gray-600 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                             </button>
@@ -347,7 +357,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="content-table relative">
+            <div class="content-table relative mt-5">
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500  ">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
@@ -413,8 +423,8 @@
                                 </th>
                                 <td class="px-6 py-4 text-center">
                                     <div class="store-table-box flex flex-col items-center justify-center">
-                                        <div class="store-img">
-                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        <div class="store-img w-20 h-20">
+                                            <img class="w-full h-full object-contain" src="assets/img/table-store-img.png" alt="Store Images">
                                         </div>
                                         <div class="store-text">
                                             <span class="block text-xs text-gray-900">SomePrintArt</span>
@@ -429,12 +439,12 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-center ">
-                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                   <div class="order-table-image w-24 h-24 flex flex-col items-center justify-center">
                                        <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
                                    </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <div class="order-item-information mt-2">
+                                    <div class="order-item-information mt-2 whitespace-nowrap">
                                         <ul>
                                             <li class="flex items-center mt-1.5">
                                                 <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
@@ -546,8 +556,8 @@
                                 </th>
                                 <td class="px-6 py-4 text-center">
                                     <div class="store-table-box flex flex-col items-center justify-center">
-                                        <div class="store-img">
-                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        <div class="store-img w-20 h-20">
+                                            <img class="w-full h-full object-contain" src="assets/img/table-store-img.png" alt="Store Images">
                                         </div>
                                         <div class="store-text">
                                             <span class="block text-xs text-gray-900">SomePrintArt</span>
@@ -562,12 +572,12 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-center ">
-                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                   <div class="order-table-image w-24 h-24 flex flex-col items-center justify-center">
                                        <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
                                    </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <div class="order-item-information mt-2">
+                                    <div class="order-item-information mt-2 whitespace-nowrap">
                                         <ul>
                                             <li class="flex items-center mt-1.5">
                                                 <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
@@ -602,7 +612,7 @@
                                 <td class="px-6 py-4">
                                     <div class="flex flex-col items-center justify-center">
                                         <div class="order-connection-table ">
-                                            <button type="button" class="flex items-center text-white text-sm font-medium w-full bg-orange-600 focus:outline-none rounded-lg px-5 p-2.5">
+                                            <button type="button" class="whitespace-nowrap flex items-center text-white text-sm font-medium w-full bg-orange-600 focus:outline-none rounded-lg px-5 p-2.5">
                                                 <svg class="mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M9.21872 6.78133C8.71865 6.28141 8.04049 6.00057 7.33339 6.00057C6.62628 6.00057 5.94813 6.28141 5.44805 6.78133L2.78139 9.448C2.52669 9.69399 2.32354 9.98824 2.18378 10.3136C2.04403 10.6389 1.97046 10.9889 1.96739 11.3429C1.96431 11.697 2.03178 12.0482 2.16586 12.3759C2.29994 12.7036 2.49795 13.0013 2.74833 13.2517C2.99871 13.5021 3.29645 13.7001 3.62418 13.8342C3.9519 13.9683 4.30305 14.0357 4.65712 14.0327C5.0112 14.0296 5.36112 13.956 5.68647 13.8163C6.01181 13.6765 6.30606 13.4734 6.55205 13.2187L7.28672 12.4847M6.78139 9.21867C7.28146 9.71859 7.95962 9.99943 8.66672 9.99943C9.37382 9.99943 10.052 9.71859 10.5521 9.21867L13.2187 6.552C13.7045 6.04906 13.9733 5.37545 13.9672 4.67626C13.9611 3.97707 13.6807 3.30824 13.1862 2.81382C12.6918 2.3194 12.023 2.03894 11.3238 2.03287C10.6246 2.02679 9.95099 2.29558 9.44805 2.78133L8.71472 3.51467" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
@@ -689,8 +699,8 @@
                                 </th>
                                 <td class="px-6 py-4 text-center">
                                     <div class="store-table-box flex flex-col items-center justify-center">
-                                        <div class="store-img">
-                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        <div class="store-img w-20 h-20">
+                                            <img class="w-full h-full object-contain" src="assets/img/table-store-img.png" alt="Store Images">
                                         </div>
                                         <div class="store-text">
                                             <span class="block text-xs text-gray-900">SomePrintArt</span>
@@ -705,12 +715,12 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-center ">
-                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                   <div class="order-table-image w-24 h-24 flex flex-col items-center justify-center">
                                        <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
                                    </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <div class="order-item-information mt-2">
+                                    <div class="order-item-information mt-2 whitespace-nowrap">
                                         <ul>
                                             <li class="flex items-center mt-1.5">
                                                 <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
@@ -823,8 +833,8 @@
                                 </th>
                                 <td class="px-6 py-4 text-center">
                                     <div class="store-table-box flex flex-col items-center justify-center">
-                                        <div class="store-img">
-                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        <div class="store-img w-20 h-20">
+                                            <img class="w-full h-full object-contain" src="assets/img/table-store-img.png" alt="Store Images">
                                         </div>
                                         <div class="store-text">
                                             <span class="block text-xs text-gray-900">SomePrintArt</span>
@@ -839,12 +849,12 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-center ">
-                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                   <div class="order-table-image w-24 h-24 flex flex-col items-center justify-center">
                                        <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
                                    </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <div class="order-item-information mt-2">
+                                    <div class="order-item-information mt-2 whitespace-nowrap">
                                         <ul>
                                             <li class="flex items-center mt-1.5">
                                                 <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
@@ -956,8 +966,8 @@
                                 </th>
                                 <td class="px-6 py-4 text-center">
                                     <div class="store-table-box flex flex-col items-center justify-center">
-                                        <div class="store-img">
-                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        <div class="store-img w-20 h-20">
+                                            <img class="w-full h-full object-contain" src="assets/img/table-store-img.png" alt="Store Images">
                                         </div>
                                         <div class="store-text">
                                             <span class="block text-xs text-gray-900">SomePrintArt</span>
@@ -972,12 +982,12 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-center ">
-                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                   <div class="order-table-image w-24 h-24 flex flex-col items-center justify-center">
                                        <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
                                    </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <div class="order-item-information mt-2">
+                                    <div class="order-item-information mt-2 whitespace-nowrap">
                                         <ul>
                                             <li class="flex items-center mt-1.5">
                                                 <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
@@ -1089,8 +1099,8 @@
                                 </th>
                                 <td class="px-6 py-4 text-center">
                                     <div class="store-table-box flex flex-col items-center justify-center">
-                                        <div class="store-img">
-                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        <div class="store-img w-20 h-20">
+                                            <img class="w-full h-full object-contain" src="assets/img/table-store-img.png" alt="Store Images">
                                         </div>
                                         <div class="store-text">
                                             <span class="block text-xs text-gray-900">SomePrintArt</span>
@@ -1105,12 +1115,12 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-center ">
-                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                   <div class="order-table-image w-24 h-24 flex flex-col items-center justify-center">
                                        <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
                                    </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <div class="order-item-information mt-2">
+                                    <div class="order-item-information mt-2 whitespace-nowrap">
                                         <ul>
                                             <li class="flex items-center mt-1.5">
                                                 <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
@@ -1222,8 +1232,8 @@
                                 </th>
                                 <td class="px-6 py-4 text-center">
                                     <div class="store-table-box flex flex-col items-center justify-center">
-                                        <div class="store-img">
-                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        <div class="store-img w-20 h-20">
+                                            <img class="w-full h-full object-contain" src="assets/img/table-store-img.png" alt="Store Images">
                                         </div>
                                         <div class="store-text">
                                             <span class="block text-xs text-gray-900">SomePrintArt</span>
@@ -1238,12 +1248,12 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-center ">
-                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                   <div class="order-table-image w-24 h-24 flex flex-col items-center justify-center">
                                        <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
                                    </div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <div class="order-item-information mt-2">
+                                    <div class="order-item-information mt-2 whitespace-nowrap">
                                         <ul>
                                             <li class="flex items-center mt-1.5">
                                                 <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
@@ -1364,7 +1374,7 @@
             </div>
         </div>
     </section>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="../path/to/flowbite/dist/datepicker.js"></script>
 <script src="https://unpkg.com/flowbite@1.4.7/dist/datepicker.js"></script>

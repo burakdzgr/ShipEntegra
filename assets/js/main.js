@@ -1,15 +1,10 @@
-// document.getElementById('nav-toggle').addEventListener('click', function(e){
-//     if(true) {
-//         document.getElementById('sidebar').classList.add('mobile-sidebar');
-//         document.getElementById('social-list').classList.add('flex-col');
-//         document.getElementById('content').classList.add('content-full');
-//         var y = document.getElementsByClassName('sidebar-items-text');
-//         for (var i=0;i<y.length;i+=1){
-//             y[i].style.display = 'none';
-//         }
-//       }
-// })
-
+function checkScreen(e){
+    if (window.matchMedia('(max-width: 767px)').matches){
+        console.log(e);
+    }else{
+        console.log(e);
+    }
+}
 $(document).on("click","#nav-toggle",function(){
     var checkClass = $("#sidebar").hasClass("mobile-sidebar");
     if ( checkClass ){
@@ -29,3 +24,4 @@ $(document).on("click","#nav-toggle",function(){
         $(".sidebar-items-text span").hide(100)
     }
 });
+

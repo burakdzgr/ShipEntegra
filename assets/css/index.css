@@ -24,6 +24,21 @@
 .sidebar{
     padding: 70px 0 0 0;
     z-index: -1;
+    width: 240px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+}
+.mobile-sidebar{
+    padding: 70px 0 0 0;
+    z-index: -1;
+    width: 65px !important;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 .sidebar-items-icon svg{
     fill: #374151;
@@ -44,7 +59,6 @@
 .sort-filter select option{
     background-color: white;
     padding: 10px 0;
-    color: rgb(107 114 128);
 
 }
 .sort-filter select:required:invalid {
@@ -60,4 +74,16 @@
 .sort-filter svg{
     padding: 0 10px 0 0;
     color: #f97316;
+}
+.content{
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.content-full{
+    padding-left: 100px !important;
+}
+.content-top-tab-items ul li button{
+    border-bottom: 2px solid transparent;
 }

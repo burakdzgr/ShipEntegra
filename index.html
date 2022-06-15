@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/index.css">
     <title>Orders List</title>
 </head>
-<body>
-    <header class="header border-b px-5 bg-white z-10 ">
+<body id="body">
+    <header class="header border-b px-5 bg-white z-20 sticky top-0">
         <div class="header-items flex items-center justify-between py-3">
             <div class="header-main-nav flex items-center">
                 <div class="header-mobile-icon">
-                    <a href="javascript:;" class="block">
+                    <a href="javascript:;" class="block" id="nav-toggle" onclick"openNav(this)">
                         <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.799805 2.49999C0.799805 2.07565 0.968376 1.66868 1.26843 1.36862C1.56849 1.06857 1.97546 0.899994 2.3998 0.899994H21.5998C22.0242 0.899994 22.4311 1.06857 22.7312 1.36862C23.0312 1.66868 23.1998 2.07565 23.1998 2.49999C23.1998 2.92434 23.0312 3.33131 22.7312 3.63136C22.4311 3.93142 22.0242 4.09999 21.5998 4.09999H2.3998C1.97546 4.09999 1.56849 3.93142 1.26843 3.63136C0.968376 3.33131 0.799805 2.92434 0.799805 2.49999ZM0.799805 10.5C0.799805 10.0756 0.968376 9.66868 1.26843 9.36862C1.56849 9.06857 1.97546 8.89999 2.3998 8.89999H21.5998C22.0242 8.89999 22.4311 9.06857 22.7312 9.36862C23.0312 9.66868 23.1998 10.0756 23.1998 10.5C23.1998 10.9243 23.0312 11.3313 22.7312 11.6314C22.4311 11.9314 22.0242 12.1 21.5998 12.1H2.3998C1.97546 12.1 1.56849 11.9314 1.26843 11.6314C0.968376 11.3313 0.799805 10.9243 0.799805 10.5ZM0.799805 18.5C0.799805 18.0756 0.968376 17.6687 1.26843 17.3686C1.56849 17.0686 1.97546 16.9 2.3998 16.9H11.9998C12.4242 16.9 12.8311 17.0686 13.1312 17.3686C13.4312 17.6687 13.5998 18.0756 13.5998 18.5C13.5998 18.9243 13.4312 19.3313 13.1312 19.6314C12.8311 19.9314 12.4242 20.1 11.9998 20.1H2.3998C1.97546 20.1 1.56849 19.9314 1.26843 19.6314C0.968376 19.3313 0.799805 18.9243 0.799805 18.5Z" fill="#6B7280"/>
-                            </svg> 
+                        </svg> 
                     </a>
                 </div>
-                <div class="header-logo ml-2">
+                <div class="header-logo ml-5">
                     <a href="javascript:;" class="block">
                         <img src="assets/img/logo.png" alt="">
                     </a>
@@ -40,7 +39,7 @@
                             </svg> 
                        </div> 
                         <div class="switch-product-panel-text ml-2 text-xs">
-                            <span class="block text-orange-500">Switch to Producer Panel</span> 
+                            <span class="block text-orange-600">Switch to Producer Panel</span> 
                         </div>  
                    </a>                       
                 </div>
@@ -57,7 +56,7 @@
         </div>
     </header>
     <section class="wrapper flex items-center">
-        <div class="sidebar w-60 border-r fixed h-screen top-0 bottom-0">
+        <div class="sidebar w-60 border-r z-10 fixed bg-white h-screen top-0 bottom-0 shadow-lg" id="sidebar">
             <div class="sidebar-items-wrapper flex flex-col justify-between h-full">
                 <div class="sidebar-items">
                     <div class="sidebar-list-box py-3 px-4 border-b">
@@ -86,7 +85,7 @@
                                             <div class="sidebar-items-icon">
                                                 <svg width="20" height="20" viewBox="0 0 20 20"         xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99999 2C7.79099 2 5.99999 3.791 5.99999 6V7H4.99999C4.48999 7 4.062 7.38301 4.006 7.89001L3.006 16.89C2.975 17.172 3.06499 17.455 3.25499 17.667C3.44499 17.879 3.71599 18 3.99999 18H16C16.284 18 16.555 17.879 16.745 17.667C16.935 17.455 17.025 17.172 16.994 16.89L15.994 7.89001C15.938 7.38301 15.51 7 15 7H14V6C14 3.791 12.209 2 9.99999 2ZM12 7V6C12 4.895 11.105 4 9.99999 4C8.89499 4 7.99999 4.895 7.99999 6V7H12ZM5.99999 10C5.99999 9.448 6.44799 9 6.99999 9C7.55199 9 7.99999 9.448 7.99999 10C7.99999 10.552 7.55199 11 6.99999 11C6.44799 11 5.99999 10.552 5.99999 10ZM13 9C12.448 9 12 9.448 12 10C12 10.552 12.448 11 13 11C13.552 11 14 10.552 14 10C14 9.448 13.552 9 13 9Z" />
-                                                    </svg>
+                                                </svg>
                                             </div>
                                             <div class="sidebar-items-text ml-2">
                                                 <span class="block text-gray-700">My Orders</span>
@@ -103,7 +102,7 @@
                                             <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M8.433 7.418C8.588 7.315 8.779 7.222 9 7.151V8.849C8.79973 8.78623 8.60896 8.6964 8.433 8.582C8.07 8.34 8 8.114 8 8C8 7.886 8.07 7.66 8.433 7.418ZM11 12.849V11.151C11.22 11.222 11.412 11.315 11.567 11.418C11.931 11.661 12 11.886 12 12C12 12.114 11.93 12.34 11.567 12.582C11.391 12.6964 11.2003 12.7862 11 12.849Z" />
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10 18C12.1217 18 14.1566 17.1571 15.6569 15.6569C17.1571 14.1566 18 12.1217 18 10C18 7.87827 17.1571 5.84344 15.6569 4.34315C14.1566 2.84285 12.1217 2 10 2C7.87827 2 5.84344 2.84285 4.34315 4.34315C2.84285 5.84344 2 7.87827 2 10C2 12.1217 2.84285 14.1566 4.34315 15.6569C5.84344 17.1571 7.87827 18 10 18ZM11 5C11 4.73478 10.8946 4.48043 10.7071 4.29289C10.5196 4.10536 10.2652 4 10 4C9.73478 4 9.48043 4.10536 9.29289 4.29289C9.10536 4.48043 9 4.73478 9 5V5.092C8.40268 5.19833 7.83276 5.42344 7.324 5.754C6.602 6.234 6 7.009 6 8C6 8.99 6.602 9.765 7.324 10.246C7.804 10.566 8.378 10.791 9 10.908V12.849C8.609 12.722 8.32 12.532 8.157 12.345C8.0724 12.2412 7.96782 12.1554 7.84945 12.0928C7.73107 12.0302 7.60133 11.992 7.46791 11.9804C7.33449 11.9689 7.20012 11.9843 7.07276 12.0257C6.9454 12.0671 6.82765 12.1336 6.72649 12.2214C6.62534 12.3091 6.54284 12.4163 6.48389 12.5365C6.42494 12.6568 6.39075 12.7876 6.38334 12.9214C6.37592 13.0551 6.39544 13.1889 6.44073 13.3149C6.48602 13.441 6.55617 13.5566 6.647 13.655C7.209 14.304 8.06 14.731 9 14.908V15C9 15.2652 9.10536 15.5196 9.29289 15.7071C9.48043 15.8946 9.73478 16 10 16C10.2652 16 10.5196 15.8946 10.7071 15.7071C10.8946 15.5196 11 15.2652 11 15V14.908C11.5973 14.8017 12.1672 14.5766 12.676 14.246C13.398 13.766 14 12.991 14 12C14 11.01 13.398 10.235 12.676 9.754C12.1672 9.42344 11.5973 9.19833 11 9.092V7.151C11.391 7.278 11.68 7.468 11.843 7.655C11.9284 7.75631 12.0331 7.83965 12.1509 7.90016C12.2688 7.96067 12.3975 7.99716 12.5296 8.00749C12.6617 8.01783 12.7945 8.00182 12.9204 7.96038C13.0462 7.91894 13.1626 7.85291 13.2627 7.76612C13.3628 7.67932 13.4447 7.5735 13.5035 7.4548C13.5624 7.33609 13.5971 7.20688 13.6056 7.07465C13.6141 6.94243 13.5962 6.80984 13.553 6.68458C13.5098 6.55932 13.4422 6.44389 13.354 6.345C12.791 5.696 11.941 5.269 11 5.092V5Z" />
-                                                </svg>
+                                            </svg>
                                         </div>
                                         <div class="sidebar-items-text ml-2">
                                             <span class="block text-gray-700">Orders</span>
@@ -144,7 +143,7 @@
                                                     <span class="block text-gray-700">Messages</span>
                                                 </div> 
                                             </div>
-                                            <div class="sidebar-items-badge bg-orange-300 w-4 h-4 rounded-full">
+                                            <div class="sidebar-items-badge shrink-0 bg-orange-300 w-4 h-4 rounded-full">
                                                 <span class="block text-xs text-orange-800 text-center">1</span>
                                             </div>
                                         </div>
@@ -166,10 +165,10 @@
                                                 <span class="block text-gray-700">Payments</span> 
                                             </div>  
                                         </div>
-                                        <div class="sidebar-items-icon">
+                                        <div class="sidebar-items-second-icon">
                                                 <svg width="20" height="20" viewBox="0 0 20 20"  xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.29303 14.707C7.10556 14.5195 7.00024 14.2652 7.00024 14C7.00024 13.7348 7.10556 13.4805 7.29303 13.293L10.586 10L7.29303 6.70701C7.11087 6.51841 7.01008 6.26581 7.01236 6.00361C7.01463 5.74141 7.1198 5.4906 7.30521 5.30519C7.49062 5.11978 7.74143 5.01461 8.00363 5.01234C8.26583 5.01006 8.51843 5.11085 8.70703 5.29301L12.707 9.29301C12.8945 9.48054 12.9998 9.73485 12.9998 10C12.9998 10.2652 12.8945 10.5195 12.707 10.707L8.70703 14.707C8.5195 14.8945 8.26519 14.9998 8.00003 14.9998C7.73487 14.9998 7.48056 14.8945 7.29303 14.707Z"/>
-                                                </svg>  
+                                            </svg>  
                                         </div> 
                                    </div>                      
                                 </a>
@@ -202,9 +201,7 @@
                                             <div class="sidebar-items-icon">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M18 10C18 12.1217 17.1571 14.1566 15.6569 15.6569C14.1566 17.1571 12.1217 18 10 18C7.87827 18 5.84344 17.1571 4.34315 15.6569C2.84285 14.1566 2 12.1217 2 10C2 7.87827 2.84285 5.84344 4.34315 4.34315C5.84344 2.84285 7.87827 2 10 2C12.1217 2 14.1566 2.84285 15.6569 4.34315C17.1571 5.84344 18 7.87827 18 10ZM16 10C16 10.993 15.759 11.929 15.332 12.754L13.808 11.229C14.0362 10.5227 14.0632 9.76679 13.886 9.046L15.448 7.484C15.802 8.249 16 9.1 16 10ZM10.835 13.913L12.415 15.493C11.654 15.8281 10.8315 16.0007 10 16C9.13118 16.0011 8.27257 15.8127 7.484 15.448L9.046 13.886C9.63267 14.0298 10.2443 14.039 10.835 13.913ZM6.158 11.117C5.96121 10.4394 5.94707 9.72182 6.117 9.037L6.037 9.117L4.507 7.584C4.1718 8.34531 3.99913 9.16817 4 10C4 10.954 4.223 11.856 4.619 12.657L6.159 11.117H6.158ZM7.246 4.667C8.09722 4.22702 9.04179 3.99825 10 4C10.954 4 11.856 4.223 12.657 4.619L11.117 6.159C10.3493 5.93538 9.53214 5.94687 8.771 6.192L7.246 4.668V4.667ZM12 10C12 10.5304 11.7893 11.0391 11.4142 11.4142C11.0391 11.7893 10.5304 12 10 12C9.46957 12 8.96086 11.7893 8.58579 11.4142C8.21071 11.0391 8 10.5304 8 10C8 9.46957 8.21071 8.96086 8.58579 8.58579C8.96086 8.21071 9.46957 8 10 8C10.5304 8 11.0391 8.21071 11.4142 8.58579C11.7893 8.96086 12 9.46957 12 10Z" />
-                                                    </svg>
-                                                    
-                                                    
+                                                </svg>  
                                             </div>
                                             <div class="sidebar-items-text ml-2">
                                                 <span class="block text-gray-700">Help</span>
@@ -217,8 +214,8 @@
                     </div>
                 </div>
                 <div class="sidebar-items-social pb-10">
-                    <ul class="flex items-center justify-center">
-                        <li class="px-3">
+                    <ul class="flex items-center justify-center" id="social-list">
+                        <li class="p-3">
                             <a href="javascript:;" class="block">
                                 <div class="sidebar-items-icon">
                                     <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -228,7 +225,7 @@
                                 </div>     
                             </a>
                         </li>
-                        <li class="px-3">
+                        <li class="p-3">
                             <a href="javascript:;" class="block">
                                 <div class="sidebar-items-icon">
                                     <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -237,7 +234,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="px-3">
+                        <li class="p-3">
                             <a href="javascript:;" class="block">
                                 <div class="sidebar-items-icon">
                                     <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -250,30 +247,1127 @@
                 </div>
             </div>
         </div>
-        <div class="content relative pl-64 pt-5 w-full">
+        <div class="content relative pl-64 pt-5 pr-4 w-full" id="content">
             <div class="content-top">
                 <div class="content-head">
                     <h1 class="text-2xl text-gray-900 font-medium">Orders</h1>
                 </div>
-                <div class="filter-menu mt-2">
-                    <div class="filter-menu-left">
-                        <div class="sort-filter relative inline-block">
-                            <select class="border border-orange-500 bg-white pt-2.5 pr-16 pb-2.5 pl-2.5 rounded-lg focus:outline-none cursor-pointer" name="sort-filter" id="sort-filter " required>
-                                <option value="" disabled hidden selected>Sort by...</option>
-                                <option value="Lorem">Lorem</option>
-                                <option value="Lorem">Lorem</option>
-                                <option value="Lorem">Lorem</option>
-                                <option value="Lorem">Lorem</option>
+                <div class="filter-menu mt-2 flex items-center justify-between">
+                    <div class="filter-menu-left flex items-center w-1/2">
+                        <div class="sort-filter relative inline-block w-1/5">
+                            <select id="selectby" class="w-full bg-white border border-orange-600 text-orange-600 text-sm rounded-lg focus:outline-none block w-full p-2.5">
+                                <option selected disabled hidden >Selected</option>
+                                <option value="Lorem İpsum">Lorem İpsum</option>
+                                <option value="Lorem İpsum">Lorem İpsum</option>
+                                <option value="Lorem İpsum">Lorem İpsum</option>
+                                <option value="Lorem İpsum">Lorem İpsum</option>
                             </select>
                             <div class="select-icon absolute top-1/2 right-0">
                                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="6 9 12 15 18 9"></polyline></svg>
                             </div>
                         </div>
+                        <div class="filter-menu-left-search-input ml-2 w-2/5">
+                            <input type="text" class="w-full sm:text-sm rounded-lg pl-5 p-2.5 border focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Search in Orders">
+                        </div>
+                        <div class="filter-menu-left-date-input relative ml-2 w-2/5">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                              </div>
+                              <input datepicker datepicker-autohide type="text" class="focus:outline-none bg-white border text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder="Select date">
+                        </div>
                     </div>
-                    <div class="filter-menu-right"></div>
+                    <div class="filter-menu-right flex items-center w-1/2 ml-2">
+                        <div class="new-order-btn w-1/5">
+                            <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
+                                <svg class="mr-2 w-4 h-4" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                New Order
+                            </button>
+                        </div>
+                        <div class="filter-btn ml-2 w-1/5">
+                            <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
+                                <svg class="mr-2 w-4 h-4" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                                Filter
+                            </button>
+                        </div>
+                        <div class="import-btn ml-2 w-1/5">
+                            <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
+                                <svg class="mr-2 w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3999 13.6C2.3999 13.3878 2.48419 13.1843 2.63422 13.0343C2.78425 12.8843 2.98773 12.8 3.1999 12.8H12.7999C13.0121 12.8 13.2156 12.8843 13.3656 13.0343C13.5156 13.1843 13.5999 13.3878 13.5999 13.6C13.5999 13.8122 13.5156 14.0157 13.3656 14.1657C13.2156 14.3157 13.0121 14.4 12.7999 14.4H3.1999C2.98773 14.4 2.78425 14.3157 2.63422 14.1657C2.48419 14.0157 2.3999 13.8122 2.3999 13.6ZM5.0343 5.3656C4.88433 5.21558 4.80007 5.01213 4.80007 4.8C4.80007 4.58787 4.88433 4.38443 5.0343 4.2344L7.4343 1.8344C7.58433 1.68443 7.78777 1.60017 7.9999 1.60017C8.21203 1.60017 8.41548 1.68443 8.5655 1.8344L10.9655 4.2344C11.1112 4.38528 11.1919 4.58737 11.19 4.79712C11.1882 5.00688 11.1041 5.20753 10.9558 5.35586C10.8074 5.50418 10.6068 5.58832 10.397 5.59014C10.1873 5.59196 9.98519 5.51133 9.8343 5.3656L8.7999 4.3312V10.4C8.7999 10.6122 8.71562 10.8157 8.56559 10.9657C8.41556 11.1157 8.21208 11.2 7.9999 11.2C7.78773 11.2 7.58425 11.1157 7.43422 10.9657C7.28419 10.8157 7.1999 10.6122 7.1999 10.4V4.3312L6.1655 5.3656C6.01548 5.51558 5.81203 5.59983 5.5999 5.59983C5.38777 5.59983 5.18432 5.51558 5.0343 5.3656Z" fill="white"/>
+                                </svg>
+                                İmport
+                            </button>
+                        </div>
+                        <div class="export-btn ml-2 w-1/5">
+                            <button type="button" class="w-full text-white bg-orange-600 border border-gray-200 focus:outline-none font-medium rounded-lg text-sm px-5 p-2.5 text-center inline-flex items-center">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3999 13.6C2.3999 13.3878 2.48419 13.1843 2.63422 13.0343C2.78425 12.8843 2.98773 12.8 3.1999 12.8H12.7999C13.0121 12.8 13.2156 12.8843 13.3656 13.0343C13.5156 13.1843 13.5999 13.3878 13.5999 13.6C13.5999 13.8122 13.5156 14.0157 13.3656 14.1657C13.2156 14.3157 13.0121 14.4 12.7999 14.4H3.1999C2.98773 14.4 2.78425 14.3157 2.63422 14.1657C2.48419 14.0157 2.3999 13.8122 2.3999 13.6ZM5.0343 7.43441C5.18432 7.28443 5.38777 7.20018 5.5999 7.20018C5.81203 7.20018 6.01548 7.28443 6.1655 7.43441L7.1999 8.46881V2.40001C7.1999 2.18783 7.28419 1.98435 7.43422 1.83432C7.58425 1.68429 7.78773 1.60001 7.9999 1.60001C8.21208 1.60001 8.41556 1.68429 8.56559 1.83432C8.71562 1.98435 8.7999 2.18783 8.7999 2.40001V8.46881L9.8343 7.43441C9.9081 7.358 9.99638 7.29705 10.094 7.25512C10.1916 7.2132 10.2966 7.19113 10.4028 7.19021C10.509 7.18928 10.6143 7.20952 10.7127 7.24975C10.811 7.28997 10.9003 7.34938 10.9754 7.42449C11.0505 7.4996 11.1099 7.58893 11.1502 7.68724C11.1904 7.78556 11.2106 7.8909 11.2097 7.99713C11.2088 8.10335 11.1867 8.20833 11.1448 8.30593C11.1029 8.40353 11.0419 8.49181 10.9655 8.56561L8.5655 10.9656C8.41548 11.1156 8.21203 11.1998 7.9999 11.1998C7.78777 11.1998 7.58433 11.1156 7.4343 10.9656L5.0343 8.56561C4.88433 8.41558 4.80007 8.21214 4.80007 8.00001C4.80007 7.78787 4.88433 7.58443 5.0343 7.43441V7.43441Z" fill="white"/>
+                                </svg>  
+                                Export
+                            </button>
+                        </div>
+                        <div class="select-order-btn w-1/5 ml-2">
+                            <select id="selected" class="w-full bg-white border border-orange-600 text-orange-600 text-sm rounded-lg focus:outline-none block w-full p-2.5">
+                                <option selected disabled hidden >Selected</option>
+                                <option value="Lorem İpsum">Lorem İpsum</option>
+                                <option value="Lorem İpsum">Lorem İpsum</option>
+                                <option value="Lorem İpsum">Lorem İpsum</option>
+                                <option value="Lorem İpsum">Lorem İpsum</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-top-tab-items mt-5">
+                    <ul class="flex items-center justify-between">
+                        <li class="w-full text-center">
+                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">All</button>
+                        </li>
+                        <li class="w-full text-center">
+                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Awaiting Connection (4)</button>
+                        </li>
+                        <li class="w-full text-center">
+                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Awaiting Confirmation (16) </button>
+                        </li>
+                        <li class="w-full text-center">
+                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Needs Attention (1) </button>
+                        </li>
+                        <li class="w-full text-center">
+                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">In Production (22) </button>
+                        </li>
+                        <li class="w-full text-center">
+                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Ready to Ship (2)</button>
+                        </li>
+                        <li class="w-full text-center">
+                            <button type="button" class="w-full py-3 block text-gray-500 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">Shipped (29)</button>
+                        </li>
+                        <li class="w-full text-center">
+                            <button type="button" class="flex items-center justify-center text-center w-full py-3 text-gray-600 focus:border-b-2 focus:border-blue-600 focus:text-blue-600">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-table relative">
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left text-gray-500  ">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
+                            <tr>
+                                <th scope="col" class="p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-all" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                        <label for="checkbox-all" class="sr-only">checkbox</label>
+                                    </div>
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center">
+                                    STATUS
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center">
+                                    STORE
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center">
+                                    ORDER
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center">
+                                    IMAGE
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center">
+                                    ITEM
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center">
+                                    CARRIER
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center">
+                                    CONNECTION
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center">
+                                    EST.PROFIT
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-center">
+                                    NOTES
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    <span class="sr-only">Edit</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b hover:bg-gray-50 ">
+                                <td class="w-4 p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex flex-col items-center justify-center">
+                                    <div class="order-status-table text-center flex items-center bg-orange-100 py-1 flex items-center justify-center rounded-md p-2">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.1919 2.536C8.8879 1.288 7.1119 1.288 6.8079 2.536C6.76251 2.72353 6.67349 2.8977 6.54808 3.04433C6.42266 3.19096 6.2644 3.30591 6.08617 3.37982C5.90794 3.45373 5.71478 3.48451 5.52241 3.46967C5.33003 3.45483 5.14388 3.39478 4.9791 3.2944C3.8815 2.6256 2.6255 3.8816 3.2943 4.9792C3.7263 5.688 3.3431 6.6128 2.5367 6.8088C1.2879 7.112 1.2879 8.8888 2.5367 9.1912C2.72428 9.23664 2.89848 9.32575 3.04511 9.45126C3.19174 9.57677 3.30665 9.73513 3.38049 9.91346C3.45433 10.0918 3.48501 10.285 3.47003 10.4775C3.45506 10.6699 3.39484 10.856 3.2943 11.0208C2.6255 12.1184 3.8815 13.3744 4.9791 12.7056C5.14385 12.6051 5.33002 12.5448 5.52245 12.5299C5.71487 12.5149 5.90812 12.5456 6.08644 12.6194C6.26477 12.6932 6.42313 12.8082 6.54864 12.9548C6.67415 13.1014 6.76325 13.2756 6.8087 13.4632C7.1119 14.712 8.8887 14.712 9.1911 13.4632C9.2367 13.2757 9.32589 13.1016 9.45142 12.9551C9.57696 12.8086 9.7353 12.6937 9.91357 12.6199C10.0918 12.5461 10.285 12.5154 10.4774 12.5303C10.6698 12.5452 10.8559 12.6052 11.0207 12.7056C12.1183 13.3744 13.3743 12.1184 12.7055 11.0208C12.6051 10.856 12.5451 10.6699 12.5302 10.4775C12.5153 10.2851 12.546 10.0919 12.6198 9.91367C12.6936 9.7354 12.8085 9.57706 12.955 9.45153C13.1015 9.32599 13.2756 9.2368 13.4631 9.1912C14.7119 8.888 14.7119 7.1112 13.4631 6.8088C13.2755 6.76336 13.1013 6.67425 12.9547 6.54874C12.8081 6.42323 12.6931 6.26487 12.6193 6.08654C12.5455 5.90822 12.5148 5.71497 12.5298 5.52255C12.5447 5.33012 12.605 5.14395 12.7055 4.9792C13.3743 3.8816 12.1183 2.6256 11.0207 3.2944C10.8559 3.39495 10.6698 3.45516 10.4774 3.47014C10.2849 3.48511 10.0917 3.45443 9.91335 3.38059C9.73503 3.30675 9.57666 3.19184 9.45116 3.04521C9.32565 2.89858 9.23654 2.72438 9.1911 2.5368L9.1919 2.536ZM7.9999 10.4C8.63642 10.4 9.24687 10.1471 9.69695 9.69706C10.147 9.24697 10.3999 8.63652 10.3999 8C10.3999 7.36348 10.147 6.75303 9.69695 6.30294C9.24687 5.85286 8.63642 5.6 7.9999 5.6C7.36338 5.6 6.75293 5.85286 6.30284 6.30294C5.85275 6.75303 5.5999 7.36348 5.5999 8C5.5999 8.63652 5.85275 9.24697 6.30284 9.69706C6.75293 10.1471 7.36338 10.4 7.9999 10.4Z" fill="#D03801"/>
+                                        </svg>
+                                        <span class="block text-orange-600 ml-2 text-sm">In Production</span>
+                                    </div>
+                                    <div class="order-status-information mt-2">
+                                        <span class="block text-gray-900 text-xs ">Last Update:</span>
+                                        <span class="block update-time text-gray-500 text-xs mt-1">22.05.2022 16:45</span>
+                                        <span class="block last-time text-gray-400 text-xs mt-1">2d ago</span>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="store-table-box flex flex-col items-center justify-center">
+                                        <div class="store-img">
+                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        </div>
+                                        <div class="store-text">
+                                            <span class="block text-xs text-gray-900">SomePrintArt</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <div class="order-table-box">
+                                        <span class="block text-lg text-gray-700">22.05.2022</span>
+                                        <span class="block text-lg text-blue-600">#28284852923</span>
+                                        <span class="block text-lg text-red-800">Multiple (1/3)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center ">
+                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                       <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
+                                   </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-item-information mt-2">
+                                        <ul>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">#293848223</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Design:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Design#1</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Body:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Korkmaz Family</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Date & Year:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">23.04.1997</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs bg-orange-50 p-1">Qty:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">1</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <span class="block font-medium text-indigo-700 text-xl">$6.95</span>
+                                    <div class="carrier-table-img mt-2">
+                                        <img class="w-full h-full object-cover" src="assets/img/table-logo.png" alt="shipentegra logo">
+                                    </div>
+                                    <span class="mt-2 block font-light text-xs text-gray-900">Eko (4-7 days)</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col items-center justify-center">
+                                        <div class="order-connection-table text-center flex items-center justify-center bg-green-100 py-1 rounded-md p-2">
+                                            <svg class="w-3 h-3 text-green-800 font-medium" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            <span class="block text-green-800 ml-2 text-sm font-medium">Connected</span>
+                                        </div>
+                                        <div class="order-connection-text text-center">
+                                            <span class="block text-blue-700 font-medium text-lg">PW23K44DS</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="block text-green-700 text-xl font-medium">$3.45:</span>
+                                    <div class="ets-profit-desc flex items-center ">
+                                        <span class="block font-normal text-lg text-green-800">23%</span>
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 10C18.5 12.1217 17.6571 14.1566 16.1569 15.6569C14.6566 17.1571 12.6217 18 10.5 18C8.37827 18 6.34344 17.1571 4.84315 15.6569C3.34285 14.1566 2.5 12.1217 2.5 10C2.5 7.87827 3.34285 5.84344 4.84315 4.34315C6.34344 2.84285 8.37827 2 10.5 2C12.6217 2 14.6566 2.84285 16.1569 4.34315C17.6571 5.84344 18.5 7.87827 18.5 10ZM11.5 6C11.5 6.26522 11.3946 6.51957 11.2071 6.70711C11.0196 6.89464 10.7652 7 10.5 7C10.2348 7 9.98043 6.89464 9.79289 6.70711C9.60536 6.51957 9.5 6.26522 9.5 6C9.5 5.73478 9.60536 5.48043 9.79289 5.29289C9.98043 5.10536 10.2348 5 10.5 5C10.7652 5 11.0196 5.10536 11.2071 5.29289C11.3946 5.48043 11.5 5.73478 11.5 6ZM9.5 9C9.23478 9 8.98043 9.10536 8.79289 9.29289C8.60536 9.48043 8.5 9.73478 8.5 10C8.5 10.2652 8.60536 10.5196 8.79289 10.7071C8.98043 10.8946 9.23478 11 9.5 11V14C9.5 14.2652 9.60536 14.5196 9.79289 14.7071C9.98043 14.8946 10.2348 15 10.5 15H11.5C11.7652 15 12.0196 14.8946 12.2071 14.7071C12.3946 14.5196 12.5 14.2652 12.5 14C12.5 13.7348 12.3946 13.4804 12.2071 13.2929C12.0196 13.1054 11.7652 13 11.5 13V10C11.5 9.73478 11.3946 9.48043 11.2071 9.29289C11.0196 9.10536 10.7652 9 10.5 9H9.5Z" fill="#9CA3AF"/>
+                                        </svg>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-table-notes flex items-center justify-center">
+                                        <ul class="flex items-center">
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 13V5C18 4.46957 17.7893 3.96086 17.4142 3.58579C17.0391 3.21071 16.5304 3 16 3H4C3.46957 3 2.96086 3.21071 2.58579 3.58579C2.21071 3.96086 2 4.46957 2 5V13C2 13.5304 2.21071 14.0391 2.58579 14.4142C2.96086 14.7893 3.46957 15 4 15H7L10 18L13 15H16C16.5304 15 17.0391 14.7893 17.4142 14.4142C17.7893 14.0391 18 13.5304 18 13ZM5 7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H14C14.2652 6 14.5196 6.10536 14.7071 6.29289C14.8946 6.48043 15 6.73478 15 7C15 7.26522 14.8946 7.51957 14.7071 7.70711C14.5196 7.89464 14.2652 8 14 8H6C5.73478 8 5.48043 7.89464 5.29289 7.70711C5.10536 7.51957 5 7.26522 5 7ZM6 10C5.73478 10 5.48043 10.1054 5.29289 10.2929C5.10536 10.4804 5 10.7348 5 11C5 11.2652 5.10536 11.5196 5.29289 11.7071C5.48043 11.8946 5.73478 12 6 12H9C9.26522 12 9.51957 11.8946 9.70711 11.7071C9.89464 11.5196 10 11.2652 10 11C10 10.7348 9.89464 10.4804 9.70711 10.2929C9.51957 10.1054 9.26522 10 9 10H6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.20435 3.31607 4.44129 3.87868 3.87868C4.44129 3.31607 5.20435 3 6 3H16C16.1857 3 16.3678 3.05171 16.5257 3.14935C16.6837 3.24698 16.8114 3.38668 16.8944 3.55279C16.9775 3.71889 17.0126 3.90484 16.996 4.08981C16.9793 4.27477 16.9114 4.45143 16.8 4.6L14.25 8L16.8 11.4C16.9114 11.5486 16.9793 11.7252 16.996 11.9102C17.0126 12.0952 16.9775 12.2811 16.8944 12.4472C16.8114 12.6133 16.6837 12.753 16.5257 12.8507C16.3678 12.9483 16.1857 13 16 13H6C5.73478 13 5.48043 13.1054 5.29289 13.2929C5.10536 13.4804 5 13.7348 5 14V17C5 17.2652 4.89464 17.5196 4.70711 17.7071C4.51957 17.8946 4.26522 18 4 18C3.73478 18 3.48043 17.8946 3.29289 17.7071C3.10536 17.5196 3 17.2652 3 17V6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C4 3.46957 4.21071 2.96086 4.58579 2.58579C4.96086 2.21071 5.46957 2 6 2H10.586C11.1164 2.00011 11.625 2.2109 12 2.586L15.414 6C15.7891 6.37499 15.9999 6.88361 16 7.414V16C16 16.5304 15.7893 17.0391 15.4142 17.4142C15.0391 17.7893 14.5304 18 14 18H6C5.46957 18 4.96086 17.7893 4.58579 17.4142C4.21071 17.0391 4 16.5304 4 16V4ZM6 10C6 9.73478 6.10536 9.48043 6.29289 9.29289C6.48043 9.10536 6.73478 9 7 9H13C13.2652 9 13.5196 9.10536 13.7071 9.29289C13.8946 9.48043 14 9.73478 14 10C14 10.2652 13.8946 10.5196 13.7071 10.7071C13.5196 10.8946 13.2652 11 13 11H7C6.73478 11 6.48043 10.8946 6.29289 10.7071C6.10536 10.5196 6 10.2652 6 10ZM7 13C6.73478 13 6.48043 13.1054 6.29289 13.2929C6.10536 13.4804 6 13.7348 6 14C6 14.2652 6.10536 14.5196 6.29289 14.7071C6.48043 14.8946 6.73478 15 7 15H13C13.2652 15 13.5196 14.8946 13.7071 14.7071C13.8946 14.5196 14 14.2652 14 14C14 13.7348 13.8946 13.4804 13.7071 13.2929C13.5196 13.1054 13.2652 13 13 13H7Z" fill="#9CA3AF"/>
+                                                    </svg>                                                
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
+                                            <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
+                                            <path d="M9.41058 16.4226C9.56686 16.5789 9.77882 16.6667 9.99984 16.6667C10.2209 16.6667 10.4328 16.5789 10.5891 16.4226C10.7454 16.2663 10.8332 16.0543 10.8332 15.8333C10.8332 15.6123 10.7454 15.4004 10.5891 15.2441C10.4328 15.0878 10.2209 15 9.99984 15C9.77882 15 9.56686 15.0878 9.41058 15.2441C9.2543 15.4004 9.1665 15.6123 9.1665 15.8333C9.1665 16.0543 9.2543 16.2663 9.41058 16.4226Z" fill="#111928"/>
+                                            <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg> 
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50 ">
+                                <td class="w-4 p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex flex-col items-center justify-center">
+                                    <div class="order-status-table text-center flex items-center bg-yellow-100 py-1 flex items-center justify-center rounded-md p-2">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.0001 14.4C9.69748 14.4 11.3253 13.7257 12.5256 12.5255C13.7258 11.3252 14.4001 9.69738 14.4001 8C14.4001 6.30261 13.7258 4.67475 12.5256 3.47452C11.3253 2.27428 9.69748 1.6 8.0001 1.6C6.30271 1.6 4.67485 2.27428 3.47461 3.47452C2.27438 4.67475 1.6001 6.30261 1.6001 8C1.6001 9.69738 2.27438 11.3252 3.47461 12.5255C4.67485 13.7257 6.30271 14.4 8.0001 14.4ZM8.8001 4.8C8.8001 4.58783 8.71581 4.38434 8.56578 4.23431C8.41575 4.08428 8.21227 4 8.0001 4C7.78792 4 7.58444 4.08428 7.43441 4.23431C7.28438 4.38434 7.2001 4.58783 7.2001 4.8V8C7.20014 8.21215 7.28446 8.4156 7.4345 8.5656L9.6969 10.8288C9.77123 10.9031 9.85947 10.9621 9.95658 11.0023C10.0537 11.0425 10.1578 11.0632 10.2629 11.0632C10.368 11.0632 10.4721 11.0425 10.5692 11.0023C10.6663 10.9621 10.7546 10.9031 10.8289 10.8288C10.9032 10.7545 10.9622 10.6662 11.0024 10.5691C11.0426 10.472 11.0633 10.3679 11.0633 10.2628C11.0633 10.1577 11.0426 10.0536 11.0024 9.95648C10.9622 9.85937 10.9032 9.77113 10.8289 9.6968L8.8001 7.6688V4.8Z" fill="#723B13"/>
+                                        </svg> 
+                                        <span class="block text-yellow-800 ml-2 text-sm">Awaiting Confirmation</span>
+                                    </div>
+                                    <div class="order-status-information mt-2">
+                                        <span class="block text-gray-900 text-xs ">Last Update:</span>
+                                        <span class="block update-time text-gray-500 text-xs mt-1">22.05.2022 16:45</span>
+                                        <span class="block last-time text-gray-400 text-xs mt-1">2d ago</span>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="store-table-box flex flex-col items-center justify-center">
+                                        <div class="store-img">
+                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        </div>
+                                        <div class="store-text">
+                                            <span class="block text-xs text-gray-900">SomePrintArt</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <div class="order-table-box">
+                                        <span class="block text-lg text-gray-700">22.05.2022</span>
+                                        <span class="block text-lg text-blue-600">#28284852923</span>
+                                        <span class="block text-lg text-red-800">Multiple (2/3)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center ">
+                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                       <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
+                                   </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-item-information mt-2">
+                                        <ul>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">#293848223</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Design:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Design#1</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Body:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Korkmaz Family</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Date & Year:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">23.04.1997</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs bg-orange-50 p-1">Qty:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">1</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <span class="block font-medium text-indigo-700 text-xl">$13.95</span>
+                                    <div class="carrier-table-img mt-2">
+                                        <img class="w-full h-full object-cover" src="assets/img/table-logo.png" alt="shipentegra logo">
+                                    </div>
+                                    <span class="mt-2 block font-light text-xs text-gray-900">Eko (4-7 days)</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col items-center justify-center">
+                                        <div class="order-connection-table ">
+                                            <button type="button" class="flex items-center text-white text-sm font-medium w-full bg-orange-600 focus:outline-none rounded-lg px-5 p-2.5">
+                                                <svg class="mr-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.21872 6.78133C8.71865 6.28141 8.04049 6.00057 7.33339 6.00057C6.62628 6.00057 5.94813 6.28141 5.44805 6.78133L2.78139 9.448C2.52669 9.69399 2.32354 9.98824 2.18378 10.3136C2.04403 10.6389 1.97046 10.9889 1.96739 11.3429C1.96431 11.697 2.03178 12.0482 2.16586 12.3759C2.29994 12.7036 2.49795 13.0013 2.74833 13.2517C2.99871 13.5021 3.29645 13.7001 3.62418 13.8342C3.9519 13.9683 4.30305 14.0357 4.65712 14.0327C5.0112 14.0296 5.36112 13.956 5.68647 13.8163C6.01181 13.6765 6.30606 13.4734 6.55205 13.2187L7.28672 12.4847M6.78139 9.21867C7.28146 9.71859 7.95962 9.99943 8.66672 9.99943C9.37382 9.99943 10.052 9.71859 10.5521 9.21867L13.2187 6.552C13.7045 6.04906 13.9733 5.37545 13.9672 4.67626C13.9611 3.97707 13.6807 3.30824 13.1862 2.81382C12.6918 2.3194 12.023 2.03894 11.3238 2.03287C10.6246 2.02679 9.95099 2.29558 9.44805 2.78133L8.71472 3.51467" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                    Connect Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="block text-green-700 text-xl font-medium">$3.45:</span>
+                                    <div class="ets-profit-desc flex items-center ">
+                                        <span class="block font-normal text-lg text-green-800">23%</span>
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 10C18.5 12.1217 17.6571 14.1566 16.1569 15.6569C14.6566 17.1571 12.6217 18 10.5 18C8.37827 18 6.34344 17.1571 4.84315 15.6569C3.34285 14.1566 2.5 12.1217 2.5 10C2.5 7.87827 3.34285 5.84344 4.84315 4.34315C6.34344 2.84285 8.37827 2 10.5 2C12.6217 2 14.6566 2.84285 16.1569 4.34315C17.6571 5.84344 18.5 7.87827 18.5 10ZM11.5 6C11.5 6.26522 11.3946 6.51957 11.2071 6.70711C11.0196 6.89464 10.7652 7 10.5 7C10.2348 7 9.98043 6.89464 9.79289 6.70711C9.60536 6.51957 9.5 6.26522 9.5 6C9.5 5.73478 9.60536 5.48043 9.79289 5.29289C9.98043 5.10536 10.2348 5 10.5 5C10.7652 5 11.0196 5.10536 11.2071 5.29289C11.3946 5.48043 11.5 5.73478 11.5 6ZM9.5 9C9.23478 9 8.98043 9.10536 8.79289 9.29289C8.60536 9.48043 8.5 9.73478 8.5 10C8.5 10.2652 8.60536 10.5196 8.79289 10.7071C8.98043 10.8946 9.23478 11 9.5 11V14C9.5 14.2652 9.60536 14.5196 9.79289 14.7071C9.98043 14.8946 10.2348 15 10.5 15H11.5C11.7652 15 12.0196 14.8946 12.2071 14.7071C12.3946 14.5196 12.5 14.2652 12.5 14C12.5 13.7348 12.3946 13.4804 12.2071 13.2929C12.0196 13.1054 11.7652 13 11.5 13V10C11.5 9.73478 11.3946 9.48043 11.2071 9.29289C11.0196 9.10536 10.7652 9 10.5 9H9.5Z" fill="#9CA3AF"/>
+                                        </svg>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-table-notes flex items-center justify-center">
+                                        <ul class="flex items-center">
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 13V5C18 4.46957 17.7893 3.96086 17.4142 3.58579C17.0391 3.21071 16.5304 3 16 3H4C3.46957 3 2.96086 3.21071 2.58579 3.58579C2.21071 3.96086 2 4.46957 2 5V13C2 13.5304 2.21071 14.0391 2.58579 14.4142C2.96086 14.7893 3.46957 15 4 15H7L10 18L13 15H16C16.5304 15 17.0391 14.7893 17.4142 14.4142C17.7893 14.0391 18 13.5304 18 13ZM5 7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H14C14.2652 6 14.5196 6.10536 14.7071 6.29289C14.8946 6.48043 15 6.73478 15 7C15 7.26522 14.8946 7.51957 14.7071 7.70711C14.5196 7.89464 14.2652 8 14 8H6C5.73478 8 5.48043 7.89464 5.29289 7.70711C5.10536 7.51957 5 7.26522 5 7ZM6 10C5.73478 10 5.48043 10.1054 5.29289 10.2929C5.10536 10.4804 5 10.7348 5 11C5 11.2652 5.10536 11.5196 5.29289 11.7071C5.48043 11.8946 5.73478 12 6 12H9C9.26522 12 9.51957 11.8946 9.70711 11.7071C9.89464 11.5196 10 11.2652 10 11C10 10.7348 9.89464 10.4804 9.70711 10.2929C9.51957 10.1054 9.26522 10 9 10H6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.20435 3.31607 4.44129 3.87868 3.87868C4.44129 3.31607 5.20435 3 6 3H16C16.1857 3 16.3678 3.05171 16.5257 3.14935C16.6837 3.24698 16.8114 3.38668 16.8944 3.55279C16.9775 3.71889 17.0126 3.90484 16.996 4.08981C16.9793 4.27477 16.9114 4.45143 16.8 4.6L14.25 8L16.8 11.4C16.9114 11.5486 16.9793 11.7252 16.996 11.9102C17.0126 12.0952 16.9775 12.2811 16.8944 12.4472C16.8114 12.6133 16.6837 12.753 16.5257 12.8507C16.3678 12.9483 16.1857 13 16 13H6C5.73478 13 5.48043 13.1054 5.29289 13.2929C5.10536 13.4804 5 13.7348 5 14V17C5 17.2652 4.89464 17.5196 4.70711 17.7071C4.51957 17.8946 4.26522 18 4 18C3.73478 18 3.48043 17.8946 3.29289 17.7071C3.10536 17.5196 3 17.2652 3 17V6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C4 3.46957 4.21071 2.96086 4.58579 2.58579C4.96086 2.21071 5.46957 2 6 2H10.586C11.1164 2.00011 11.625 2.2109 12 2.586L15.414 6C15.7891 6.37499 15.9999 6.88361 16 7.414V16C16 16.5304 15.7893 17.0391 15.4142 17.4142C15.0391 17.7893 14.5304 18 14 18H6C5.46957 18 4.96086 17.7893 4.58579 17.4142C4.21071 17.0391 4 16.5304 4 16V4ZM6 10C6 9.73478 6.10536 9.48043 6.29289 9.29289C6.48043 9.10536 6.73478 9 7 9H13C13.2652 9 13.5196 9.10536 13.7071 9.29289C13.8946 9.48043 14 9.73478 14 10C14 10.2652 13.8946 10.5196 13.7071 10.7071C13.5196 10.8946 13.2652 11 13 11H7C6.73478 11 6.48043 10.8946 6.29289 10.7071C6.10536 10.5196 6 10.2652 6 10ZM7 13C6.73478 13 6.48043 13.1054 6.29289 13.2929C6.10536 13.4804 6 13.7348 6 14C6 14.2652 6.10536 14.5196 6.29289 14.7071C6.48043 14.8946 6.73478 15 7 15H13C13.2652 15 13.5196 14.8946 13.7071 14.7071C13.8946 14.5196 14 14.2652 14 14C14 13.7348 13.8946 13.4804 13.7071 13.2929C13.5196 13.1054 13.2652 13 13 13H7Z" fill="#9CA3AF"/>
+                                                    </svg>                                                
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
+                                            <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
+                                            <path d="M9.41058 16.4226C9.56686 16.5789 9.77882 16.6667 9.99984 16.6667C10.2209 16.6667 10.4328 16.5789 10.5891 16.4226C10.7454 16.2663 10.8332 16.0543 10.8332 15.8333C10.8332 15.6123 10.7454 15.4004 10.5891 15.2441C10.4328 15.0878 10.2209 15 9.99984 15C9.77882 15 9.56686 15.0878 9.41058 15.2441C9.2543 15.4004 9.1665 15.6123 9.1665 15.8333C9.1665 16.0543 9.2543 16.2663 9.41058 16.4226Z" fill="#111928"/>
+                                            <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg> 
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50 ">
+                                <td class="w-4 p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex flex-col items-center justify-center">
+                                    <div class="order-status-table text-center flex items-center bg-gray-100 py-1 flex items-center justify-center rounded-md p-2">
+                                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_7418_2499)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.46563 1.8344C3.31475 1.68868 3.11267 1.60804 2.90291 1.60986C2.69315 1.61169 2.4925 1.69582 2.34418 1.84415C2.19585 1.99247 2.11172 2.19312 2.10989 2.40288C2.10807 2.61264 2.18871 2.81472 2.33443 2.9656L13.5344 14.1656C13.6853 14.3113 13.8874 14.392 14.0972 14.3901C14.3069 14.3883 14.5076 14.3042 14.6559 14.1559C14.8042 14.0075 14.8884 13.8069 14.8902 13.5971C14.892 13.3874 14.8114 13.1853 14.6656 13.0344L13.4872 11.856C14.7333 10.8625 15.6547 9.51994 16.1336 8C15.1144 4.7544 12.0824 2.4 8.50003 2.4C7.24598 2.3983 6.00923 2.69269 4.89043 3.2592L3.46643 1.8344H3.46563ZM6.87443 5.2424L8.08563 6.4544C8.3569 6.38236 8.64234 6.38284 8.91337 6.45579C9.1844 6.52873 9.43151 6.67159 9.62998 6.87005C9.82845 7.06852 9.9713 7.31564 10.0442 7.58667C10.1172 7.8577 10.1177 8.14313 10.0456 8.4144L11.2568 9.6256C11.6176 9.01442 11.765 8.30064 11.6758 7.59654C11.5865 6.89245 11.2657 6.238 10.7639 5.73614C10.262 5.23429 9.60759 4.91352 8.90349 4.82428C8.1994 4.73505 7.48562 4.88241 6.87443 5.2432V5.2424Z" fill="#111928"/>
+                                            <path d="M10.463 13.3576L8.29981 11.1936C7.52196 11.1449 6.78863 10.8139 6.23746 10.2629C5.68628 9.71188 5.35515 8.97864 5.30621 8.20081L2.36781 5.26241C1.69198 6.06722 1.18169 6.99754 0.866211 8.00001C1.88541 11.2456 4.91821 13.6 8.49981 13.6C9.17741 13.6 9.83501 13.516 10.463 13.3576Z" fill="#111928"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_7418_2499">
+                                            <rect width="16" height="16" fill="white" transform="translate(0.5)"/>
+                                            </clipPath>
+                                            </defs>
+                                            </svg>
+                                            
+                                        <span class="block text-gray-800 ml-2 text-sm">Hidden</span>
+                                    </div>
+                                    <div class="order-status-information mt-2">
+                                        <span class="block text-gray-900 text-xs ">Last Update:</span>
+                                        <span class="block update-time text-gray-500 text-xs mt-1">22.05.2022 16:45</span>
+                                        <span class="block last-time text-gray-400 text-xs mt-1">2d ago</span>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="store-table-box flex flex-col items-center justify-center">
+                                        <div class="store-img">
+                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        </div>
+                                        <div class="store-text">
+                                            <span class="block text-xs text-gray-900">SomePrintArt</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <div class="order-table-box">
+                                        <span class="block text-lg text-gray-700">22.05.2022</span>
+                                        <span class="block text-lg text-blue-600">#28284852923</span>
+                                        <span class="block text-lg text-red-800">Multiple (3/3)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center ">
+                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                       <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
+                                   </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-item-information mt-2">
+                                        <ul>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">#293848223</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Design:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Design#1</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Body:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Korkmaz Family</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Date & Year:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">23.04.1997</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs bg-orange-50 p-1">Qty:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">1</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <span class="block font-medium text-indigo-700 text-xl">$17.95</span>
+                                    <div class="carrier-table-img mt-2">
+                                        <img class="w-full h-full object-cover" src="assets/img/table-logo.png" alt="shipentegra logo">
+                                    </div>
+                                    <span class="mt-2 block font-light text-xs text-gray-900">Eko (4-7 days)</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col items-center justify-center">
+                                        <div class="order-connection-table text-center flex items-center justify-center bg-green-100 py-1 rounded-md p-2">
+                                            <svg class="w-3 h-3 text-green-800 font-medium" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            <span class="block text-green-800 ml-2 text-sm font-medium">Connected</span>
+                                        </div>
+                                        <div class="order-connection-text text-center">
+                                            <span class="block text-blue-700 font-medium text-lg">PW23K44DS</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="block text-green-700 text-xl font-medium">$3.45:</span>
+                                    <div class="ets-profit-desc flex items-center ">
+                                        <span class="block font-normal text-lg text-green-800">23%</span>
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 10C18.5 12.1217 17.6571 14.1566 16.1569 15.6569C14.6566 17.1571 12.6217 18 10.5 18C8.37827 18 6.34344 17.1571 4.84315 15.6569C3.34285 14.1566 2.5 12.1217 2.5 10C2.5 7.87827 3.34285 5.84344 4.84315 4.34315C6.34344 2.84285 8.37827 2 10.5 2C12.6217 2 14.6566 2.84285 16.1569 4.34315C17.6571 5.84344 18.5 7.87827 18.5 10ZM11.5 6C11.5 6.26522 11.3946 6.51957 11.2071 6.70711C11.0196 6.89464 10.7652 7 10.5 7C10.2348 7 9.98043 6.89464 9.79289 6.70711C9.60536 6.51957 9.5 6.26522 9.5 6C9.5 5.73478 9.60536 5.48043 9.79289 5.29289C9.98043 5.10536 10.2348 5 10.5 5C10.7652 5 11.0196 5.10536 11.2071 5.29289C11.3946 5.48043 11.5 5.73478 11.5 6ZM9.5 9C9.23478 9 8.98043 9.10536 8.79289 9.29289C8.60536 9.48043 8.5 9.73478 8.5 10C8.5 10.2652 8.60536 10.5196 8.79289 10.7071C8.98043 10.8946 9.23478 11 9.5 11V14C9.5 14.2652 9.60536 14.5196 9.79289 14.7071C9.98043 14.8946 10.2348 15 10.5 15H11.5C11.7652 15 12.0196 14.8946 12.2071 14.7071C12.3946 14.5196 12.5 14.2652 12.5 14C12.5 13.7348 12.3946 13.4804 12.2071 13.2929C12.0196 13.1054 11.7652 13 11.5 13V10C11.5 9.73478 11.3946 9.48043 11.2071 9.29289C11.0196 9.10536 10.7652 9 10.5 9H9.5Z" fill="#9CA3AF"/>
+                                        </svg>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-table-notes flex items-center justify-center">
+                                        <ul class="flex items-center">
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 13V5C18 4.46957 17.7893 3.96086 17.4142 3.58579C17.0391 3.21071 16.5304 3 16 3H4C3.46957 3 2.96086 3.21071 2.58579 3.58579C2.21071 3.96086 2 4.46957 2 5V13C2 13.5304 2.21071 14.0391 2.58579 14.4142C2.96086 14.7893 3.46957 15 4 15H7L10 18L13 15H16C16.5304 15 17.0391 14.7893 17.4142 14.4142C17.7893 14.0391 18 13.5304 18 13ZM5 7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H14C14.2652 6 14.5196 6.10536 14.7071 6.29289C14.8946 6.48043 15 6.73478 15 7C15 7.26522 14.8946 7.51957 14.7071 7.70711C14.5196 7.89464 14.2652 8 14 8H6C5.73478 8 5.48043 7.89464 5.29289 7.70711C5.10536 7.51957 5 7.26522 5 7ZM6 10C5.73478 10 5.48043 10.1054 5.29289 10.2929C5.10536 10.4804 5 10.7348 5 11C5 11.2652 5.10536 11.5196 5.29289 11.7071C5.48043 11.8946 5.73478 12 6 12H9C9.26522 12 9.51957 11.8946 9.70711 11.7071C9.89464 11.5196 10 11.2652 10 11C10 10.7348 9.89464 10.4804 9.70711 10.2929C9.51957 10.1054 9.26522 10 9 10H6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.20435 3.31607 4.44129 3.87868 3.87868C4.44129 3.31607 5.20435 3 6 3H16C16.1857 3 16.3678 3.05171 16.5257 3.14935C16.6837 3.24698 16.8114 3.38668 16.8944 3.55279C16.9775 3.71889 17.0126 3.90484 16.996 4.08981C16.9793 4.27477 16.9114 4.45143 16.8 4.6L14.25 8L16.8 11.4C16.9114 11.5486 16.9793 11.7252 16.996 11.9102C17.0126 12.0952 16.9775 12.2811 16.8944 12.4472C16.8114 12.6133 16.6837 12.753 16.5257 12.8507C16.3678 12.9483 16.1857 13 16 13H6C5.73478 13 5.48043 13.1054 5.29289 13.2929C5.10536 13.4804 5 13.7348 5 14V17C5 17.2652 4.89464 17.5196 4.70711 17.7071C4.51957 17.8946 4.26522 18 4 18C3.73478 18 3.48043 17.8946 3.29289 17.7071C3.10536 17.5196 3 17.2652 3 17V6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C4 3.46957 4.21071 2.96086 4.58579 2.58579C4.96086 2.21071 5.46957 2 6 2H10.586C11.1164 2.00011 11.625 2.2109 12 2.586L15.414 6C15.7891 6.37499 15.9999 6.88361 16 7.414V16C16 16.5304 15.7893 17.0391 15.4142 17.4142C15.0391 17.7893 14.5304 18 14 18H6C5.46957 18 4.96086 17.7893 4.58579 17.4142C4.21071 17.0391 4 16.5304 4 16V4ZM6 10C6 9.73478 6.10536 9.48043 6.29289 9.29289C6.48043 9.10536 6.73478 9 7 9H13C13.2652 9 13.5196 9.10536 13.7071 9.29289C13.8946 9.48043 14 9.73478 14 10C14 10.2652 13.8946 10.5196 13.7071 10.7071C13.5196 10.8946 13.2652 11 13 11H7C6.73478 11 6.48043 10.8946 6.29289 10.7071C6.10536 10.5196 6 10.2652 6 10ZM7 13C6.73478 13 6.48043 13.1054 6.29289 13.2929C6.10536 13.4804 6 13.7348 6 14C6 14.2652 6.10536 14.5196 6.29289 14.7071C6.48043 14.8946 6.73478 15 7 15H13C13.2652 15 13.5196 14.8946 13.7071 14.7071C13.8946 14.5196 14 14.2652 14 14C14 13.7348 13.8946 13.4804 13.7071 13.2929C13.5196 13.1054 13.2652 13 13 13H7Z" fill="#9CA3AF"/>
+                                                    </svg>                                                
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
+                                            <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
+                                            <path d="M9.41058 16.4226C9.56686 16.5789 9.77882 16.6667 9.99984 16.6667C10.2209 16.6667 10.4328 16.5789 10.5891 16.4226C10.7454 16.2663 10.8332 16.0543 10.8332 15.8333C10.8332 15.6123 10.7454 15.4004 10.5891 15.2441C10.4328 15.0878 10.2209 15 9.99984 15C9.77882 15 9.56686 15.0878 9.41058 15.2441C9.2543 15.4004 9.1665 15.6123 9.1665 15.8333C9.1665 16.0543 9.2543 16.2663 9.41058 16.4226Z" fill="#111928"/>
+                                            <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg> 
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50 ">
+                                <td class="w-4 p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex flex-col items-center justify-center">
+                                    <div class="order-status-table text-center flex items-center bg-green-100 py-1 flex items-center justify-center rounded-md p-2">
+                                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.9 13.2C6.9 13.5183 6.77357 13.8235 6.54853 14.0485C6.32348 14.2736 6.01826 14.4 5.7 14.4C5.38174 14.4 5.07652 14.2736 4.85147 14.0485C4.62643 13.8235 4.5 13.5183 4.5 13.2C4.5 12.8817 4.62643 12.5765 4.85147 12.3515C5.07652 12.1264 5.38174 12 5.7 12C6.01826 12 6.32348 12.1264 6.54853 12.3515C6.77357 12.5765 6.9 12.8817 6.9 13.2ZM12.5 13.2C12.5 13.5183 12.3736 13.8235 12.1485 14.0485C11.9235 14.2736 11.6183 14.4 11.3 14.4C10.9817 14.4 10.6765 14.2736 10.4515 14.0485C10.2264 13.8235 10.1 13.5183 10.1 13.2C10.1 12.8817 10.2264 12.5765 10.4515 12.3515C10.6765 12.1264 10.9817 12 11.3 12C11.6183 12 11.9235 12.1264 12.1485 12.3515C12.3736 12.5765 12.5 12.8817 12.5 13.2Z" fill="#03543F"/>
+                                            <path d="M2.9001 3.20001C2.68792 3.20001 2.48444 3.2843 2.33441 3.43433C2.18438 3.58436 2.1001 3.78784 2.1001 4.00001V12C2.1001 12.2122 2.18438 12.4157 2.33441 12.5657C2.48444 12.7157 2.68792 12.8 2.9001 12.8H3.7401C3.8319 12.3479 4.07719 11.9414 4.43439 11.6495C4.7916 11.3575 5.23876 11.198 5.7001 11.198C6.16144 11.198 6.6086 11.3575 6.9658 11.6495C7.32301 11.9414 7.56829 12.3479 7.6601 12.8H8.5001C8.71227 12.8 8.91575 12.7157 9.06578 12.5657C9.21581 12.4157 9.3001 12.2122 9.3001 12V4.00001C9.3001 3.78784 9.21581 3.58436 9.06578 3.43433C8.91575 3.2843 8.71227 3.20001 8.5001 3.20001H2.9001ZM11.7001 5.60001C11.4879 5.60001 11.2844 5.6843 11.1344 5.83433C10.9844 5.98436 10.9001 6.18784 10.9001 6.40001V11.24C11.1575 11.1874 11.4227 11.1861 11.6806 11.236C11.9386 11.286 12.1841 11.3862 12.4033 11.5311C12.6224 11.676 12.8109 11.8626 12.9579 12.0803C13.1049 12.298 13.2076 12.5426 13.2601 12.8H14.1001C14.3123 12.8 14.5158 12.7157 14.6658 12.5657C14.8158 12.4157 14.9001 12.2122 14.9001 12V8.00001C14.9001 7.78786 14.8157 7.58441 14.6657 7.43441L13.0657 5.83441C12.9157 5.68437 12.7123 5.60006 12.5001 5.60001H11.7001Z" fill="#111928"/>
+                                        </svg>  
+                                        <span class="block text-green-800 ml-2 text-sm">Shipped</span>
+                                    </div>
+                                    <div class="order-status-information mt-2">
+                                        <span class="block text-gray-900 text-xs ">Last Update:</span>
+                                        <span class="block update-time text-gray-500 text-xs mt-1">22.05.2022 16:45</span>
+                                        <span class="block last-time text-gray-400 text-xs mt-1">2d ago</span>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="store-table-box flex flex-col items-center justify-center">
+                                        <div class="store-img">
+                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        </div>
+                                        <div class="store-text">
+                                            <span class="block text-xs text-gray-900">SomePrintArt</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <div class="order-table-box">
+                                        <span class="block text-lg text-gray-700">22.05.2022</span>
+                                        <span class="block text-lg text-blue-600">#28284852923</span>
+                                        <span class="block text-lg text-red-800">Multiple (1/3)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center ">
+                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                       <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
+                                   </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-item-information mt-2">
+                                        <ul>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">#293848223</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Design:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Design#1</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Body:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Korkmaz Family</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Date & Year:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">23.04.1997</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs bg-orange-50 p-1">Qty:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">1</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <span class="block font-medium text-indigo-700 text-xl">-</span>
+                                    <div class="carrier-table-img mt-2">
+                                        <span class="block text-sm font-normal text-gray-900">Other</span>
+                                    </div>
+                                    <span class="mt-2 block font-light text-xs text-gray-900">Navlungo</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col items-center justify-center">
+                                        <div class="order-connection-table text-center flex items-center justify-center bg-green-100 py-1 rounded-md p-2">
+                                            <svg class="w-3 h-3 text-green-800 font-medium" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            <span class="block text-green-800 ml-2 text-sm font-medium">Connected</span>
+                                        </div>
+                                        <div class="order-connection-text text-center">
+                                            <span class="block text-blue-700 font-medium text-lg">PW23K44DS</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="block text-green-700 text-xl font-medium">$3.45:</span>
+                                    <div class="ets-profit-desc flex items-center ">
+                                        <span class="block font-normal text-lg text-green-800">23%</span>
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 10C18.5 12.1217 17.6571 14.1566 16.1569 15.6569C14.6566 17.1571 12.6217 18 10.5 18C8.37827 18 6.34344 17.1571 4.84315 15.6569C3.34285 14.1566 2.5 12.1217 2.5 10C2.5 7.87827 3.34285 5.84344 4.84315 4.34315C6.34344 2.84285 8.37827 2 10.5 2C12.6217 2 14.6566 2.84285 16.1569 4.34315C17.6571 5.84344 18.5 7.87827 18.5 10ZM11.5 6C11.5 6.26522 11.3946 6.51957 11.2071 6.70711C11.0196 6.89464 10.7652 7 10.5 7C10.2348 7 9.98043 6.89464 9.79289 6.70711C9.60536 6.51957 9.5 6.26522 9.5 6C9.5 5.73478 9.60536 5.48043 9.79289 5.29289C9.98043 5.10536 10.2348 5 10.5 5C10.7652 5 11.0196 5.10536 11.2071 5.29289C11.3946 5.48043 11.5 5.73478 11.5 6ZM9.5 9C9.23478 9 8.98043 9.10536 8.79289 9.29289C8.60536 9.48043 8.5 9.73478 8.5 10C8.5 10.2652 8.60536 10.5196 8.79289 10.7071C8.98043 10.8946 9.23478 11 9.5 11V14C9.5 14.2652 9.60536 14.5196 9.79289 14.7071C9.98043 14.8946 10.2348 15 10.5 15H11.5C11.7652 15 12.0196 14.8946 12.2071 14.7071C12.3946 14.5196 12.5 14.2652 12.5 14C12.5 13.7348 12.3946 13.4804 12.2071 13.2929C12.0196 13.1054 11.7652 13 11.5 13V10C11.5 9.73478 11.3946 9.48043 11.2071 9.29289C11.0196 9.10536 10.7652 9 10.5 9H9.5Z" fill="#9CA3AF"/>
+                                        </svg>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-table-notes flex items-center justify-center">
+                                        <ul class="flex items-center">
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 13V5C18 4.46957 17.7893 3.96086 17.4142 3.58579C17.0391 3.21071 16.5304 3 16 3H4C3.46957 3 2.96086 3.21071 2.58579 3.58579C2.21071 3.96086 2 4.46957 2 5V13C2 13.5304 2.21071 14.0391 2.58579 14.4142C2.96086 14.7893 3.46957 15 4 15H7L10 18L13 15H16C16.5304 15 17.0391 14.7893 17.4142 14.4142C17.7893 14.0391 18 13.5304 18 13ZM5 7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H14C14.2652 6 14.5196 6.10536 14.7071 6.29289C14.8946 6.48043 15 6.73478 15 7C15 7.26522 14.8946 7.51957 14.7071 7.70711C14.5196 7.89464 14.2652 8 14 8H6C5.73478 8 5.48043 7.89464 5.29289 7.70711C5.10536 7.51957 5 7.26522 5 7ZM6 10C5.73478 10 5.48043 10.1054 5.29289 10.2929C5.10536 10.4804 5 10.7348 5 11C5 11.2652 5.10536 11.5196 5.29289 11.7071C5.48043 11.8946 5.73478 12 6 12H9C9.26522 12 9.51957 11.8946 9.70711 11.7071C9.89464 11.5196 10 11.2652 10 11C10 10.7348 9.89464 10.4804 9.70711 10.2929C9.51957 10.1054 9.26522 10 9 10H6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.20435 3.31607 4.44129 3.87868 3.87868C4.44129 3.31607 5.20435 3 6 3H16C16.1857 3 16.3678 3.05171 16.5257 3.14935C16.6837 3.24698 16.8114 3.38668 16.8944 3.55279C16.9775 3.71889 17.0126 3.90484 16.996 4.08981C16.9793 4.27477 16.9114 4.45143 16.8 4.6L14.25 8L16.8 11.4C16.9114 11.5486 16.9793 11.7252 16.996 11.9102C17.0126 12.0952 16.9775 12.2811 16.8944 12.4472C16.8114 12.6133 16.6837 12.753 16.5257 12.8507C16.3678 12.9483 16.1857 13 16 13H6C5.73478 13 5.48043 13.1054 5.29289 13.2929C5.10536 13.4804 5 13.7348 5 14V17C5 17.2652 4.89464 17.5196 4.70711 17.7071C4.51957 17.8946 4.26522 18 4 18C3.73478 18 3.48043 17.8946 3.29289 17.7071C3.10536 17.5196 3 17.2652 3 17V6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C4 3.46957 4.21071 2.96086 4.58579 2.58579C4.96086 2.21071 5.46957 2 6 2H10.586C11.1164 2.00011 11.625 2.2109 12 2.586L15.414 6C15.7891 6.37499 15.9999 6.88361 16 7.414V16C16 16.5304 15.7893 17.0391 15.4142 17.4142C15.0391 17.7893 14.5304 18 14 18H6C5.46957 18 4.96086 17.7893 4.58579 17.4142C4.21071 17.0391 4 16.5304 4 16V4ZM6 10C6 9.73478 6.10536 9.48043 6.29289 9.29289C6.48043 9.10536 6.73478 9 7 9H13C13.2652 9 13.5196 9.10536 13.7071 9.29289C13.8946 9.48043 14 9.73478 14 10C14 10.2652 13.8946 10.5196 13.7071 10.7071C13.5196 10.8946 13.2652 11 13 11H7C6.73478 11 6.48043 10.8946 6.29289 10.7071C6.10536 10.5196 6 10.2652 6 10ZM7 13C6.73478 13 6.48043 13.1054 6.29289 13.2929C6.10536 13.4804 6 13.7348 6 14C6 14.2652 6.10536 14.5196 6.29289 14.7071C6.48043 14.8946 6.73478 15 7 15H13C13.2652 15 13.5196 14.8946 13.7071 14.7071C13.8946 14.5196 14 14.2652 14 14C14 13.7348 13.8946 13.4804 13.7071 13.2929C13.5196 13.1054 13.2652 13 13 13H7Z" fill="#9CA3AF"/>
+                                                    </svg>                                                
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
+                                            <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
+                                            <path d="M9.41058 16.4226C9.56686 16.5789 9.77882 16.6667 9.99984 16.6667C10.2209 16.6667 10.4328 16.5789 10.5891 16.4226C10.7454 16.2663 10.8332 16.0543 10.8332 15.8333C10.8332 15.6123 10.7454 15.4004 10.5891 15.2441C10.4328 15.0878 10.2209 15 9.99984 15C9.77882 15 9.56686 15.0878 9.41058 15.2441C9.2543 15.4004 9.1665 15.6123 9.1665 15.8333C9.1665 16.0543 9.2543 16.2663 9.41058 16.4226Z" fill="#111928"/>
+                                            <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg> 
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50 ">
+                                <td class="w-4 p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex flex-col items-center justify-center">
+                                    <div class="order-status-table text-center flex items-center bg-red-100 py-1 flex items-center justify-center rounded-md p-2">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4001 8.00001C14.4001 9.69739 13.7258 11.3253 12.5256 12.5255C11.3253 13.7257 9.69748 14.4 8.0001 14.4C6.30271 14.4 4.67485 13.7257 3.47461 12.5255C2.27438 11.3253 1.6001 9.69739 1.6001 8.00001C1.6001 6.30262 2.27438 4.67476 3.47461 3.47452C4.67485 2.27429 6.30271 1.60001 8.0001 1.60001C9.69748 1.60001 11.3253 2.27429 12.5256 3.47452C13.7258 4.67476 14.4001 6.30262 14.4001 8.00001ZM8.8001 11.2C8.8001 11.4122 8.71581 11.6157 8.56578 11.7657C8.41575 11.9157 8.21227 12 8.0001 12C7.78792 12 7.58444 11.9157 7.43441 11.7657C7.28438 11.6157 7.2001 11.4122 7.2001 11.2C7.2001 10.9878 7.28438 10.7843 7.43441 10.6343C7.58444 10.4843 7.78792 10.4 8.0001 10.4C8.21227 10.4 8.41575 10.4843 8.56578 10.6343C8.71581 10.7843 8.8001 10.9878 8.8001 11.2ZM8.0001 4.00001C7.78792 4.00001 7.58444 4.08429 7.43441 4.23432C7.28438 4.38435 7.2001 4.58783 7.2001 4.80001V8.00001C7.2001 8.21218 7.28438 8.41566 7.43441 8.56569C7.58444 8.71572 7.78792 8.80001 8.0001 8.80001C8.21227 8.80001 8.41575 8.71572 8.56578 8.56569C8.71581 8.41566 8.8001 8.21218 8.8001 8.00001V4.80001C8.8001 4.58783 8.71581 4.38435 8.56578 4.23432C8.41575 4.08429 8.21227 4.00001 8.0001 4.00001Z" fill="#9B1C1C"/>
+                                        </svg>
+                                        <span class="block text-red-800 ml-2 text-sm">Needs Attention</span>
+                                    </div>
+                                    <div class="order-status-information mt-2">
+                                        <span class="block text-gray-900 text-xs ">Last Update:</span>
+                                        <span class="block update-time text-gray-500 text-xs mt-1">22.05.2022 16:45</span>
+                                        <span class="block last-time text-gray-400 text-xs mt-1">2d ago</span>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="store-table-box flex flex-col items-center justify-center">
+                                        <div class="store-img">
+                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        </div>
+                                        <div class="store-text">
+                                            <span class="block text-xs text-gray-900">SomePrintArt</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <div class="order-table-box">
+                                        <span class="block text-lg text-gray-700">22.05.2022</span>
+                                        <span class="block text-lg text-blue-600">#28284852923</span>
+                                        <span class="block text-lg text-red-800">Multiple (1/3)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center ">
+                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                       <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
+                                   </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-item-information mt-2">
+                                        <ul>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">#293848223</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Design:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Design#1</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Body:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Korkmaz Family</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Date & Year:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">23.04.1997</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs bg-orange-50 p-1">Qty:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">1</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <span class="block font-medium text-indigo-700 text-xl">$17.45</span>
+                                    <div class="carrier-table-img mt-2">
+                                        <img class="w-full h-full object-cover" src="assets/img/table-logo.png" alt="shipentegra logo">
+                                    </div>
+                                    <span class="mt-2 block font-light text-xs text-gray-900">Eko (4-7 days)</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col items-center justify-center">
+                                        <div class="order-connection-table text-center flex items-center justify-center bg-green-100 py-1 rounded-md p-2">
+                                            <svg class="w-3 h-3 text-green-800 font-medium" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            <span class="block text-green-800 ml-2 text-sm font-medium">Connected</span>
+                                        </div>
+                                        <div class="order-connection-text text-center">
+                                            <span class="block text-blue-700 font-medium text-lg">PW23K44DS</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="block text-green-700 text-xl font-medium">$3.45:</span>
+                                    <div class="ets-profit-desc flex items-center ">
+                                        <span class="block font-normal text-lg text-green-800">23%</span>
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 10C18.5 12.1217 17.6571 14.1566 16.1569 15.6569C14.6566 17.1571 12.6217 18 10.5 18C8.37827 18 6.34344 17.1571 4.84315 15.6569C3.34285 14.1566 2.5 12.1217 2.5 10C2.5 7.87827 3.34285 5.84344 4.84315 4.34315C6.34344 2.84285 8.37827 2 10.5 2C12.6217 2 14.6566 2.84285 16.1569 4.34315C17.6571 5.84344 18.5 7.87827 18.5 10ZM11.5 6C11.5 6.26522 11.3946 6.51957 11.2071 6.70711C11.0196 6.89464 10.7652 7 10.5 7C10.2348 7 9.98043 6.89464 9.79289 6.70711C9.60536 6.51957 9.5 6.26522 9.5 6C9.5 5.73478 9.60536 5.48043 9.79289 5.29289C9.98043 5.10536 10.2348 5 10.5 5C10.7652 5 11.0196 5.10536 11.2071 5.29289C11.3946 5.48043 11.5 5.73478 11.5 6ZM9.5 9C9.23478 9 8.98043 9.10536 8.79289 9.29289C8.60536 9.48043 8.5 9.73478 8.5 10C8.5 10.2652 8.60536 10.5196 8.79289 10.7071C8.98043 10.8946 9.23478 11 9.5 11V14C9.5 14.2652 9.60536 14.5196 9.79289 14.7071C9.98043 14.8946 10.2348 15 10.5 15H11.5C11.7652 15 12.0196 14.8946 12.2071 14.7071C12.3946 14.5196 12.5 14.2652 12.5 14C12.5 13.7348 12.3946 13.4804 12.2071 13.2929C12.0196 13.1054 11.7652 13 11.5 13V10C11.5 9.73478 11.3946 9.48043 11.2071 9.29289C11.0196 9.10536 10.7652 9 10.5 9H9.5Z" fill="#9CA3AF"/>
+                                        </svg>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-table-notes flex items-center justify-center">
+                                        <ul class="flex items-center">
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 13V5C18 4.46957 17.7893 3.96086 17.4142 3.58579C17.0391 3.21071 16.5304 3 16 3H4C3.46957 3 2.96086 3.21071 2.58579 3.58579C2.21071 3.96086 2 4.46957 2 5V13C2 13.5304 2.21071 14.0391 2.58579 14.4142C2.96086 14.7893 3.46957 15 4 15H7L10 18L13 15H16C16.5304 15 17.0391 14.7893 17.4142 14.4142C17.7893 14.0391 18 13.5304 18 13ZM5 7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H14C14.2652 6 14.5196 6.10536 14.7071 6.29289C14.8946 6.48043 15 6.73478 15 7C15 7.26522 14.8946 7.51957 14.7071 7.70711C14.5196 7.89464 14.2652 8 14 8H6C5.73478 8 5.48043 7.89464 5.29289 7.70711C5.10536 7.51957 5 7.26522 5 7ZM6 10C5.73478 10 5.48043 10.1054 5.29289 10.2929C5.10536 10.4804 5 10.7348 5 11C5 11.2652 5.10536 11.5196 5.29289 11.7071C5.48043 11.8946 5.73478 12 6 12H9C9.26522 12 9.51957 11.8946 9.70711 11.7071C9.89464 11.5196 10 11.2652 10 11C10 10.7348 9.89464 10.4804 9.70711 10.2929C9.51957 10.1054 9.26522 10 9 10H6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.20435 3.31607 4.44129 3.87868 3.87868C4.44129 3.31607 5.20435 3 6 3H16C16.1857 3 16.3678 3.05171 16.5257 3.14935C16.6837 3.24698 16.8114 3.38668 16.8944 3.55279C16.9775 3.71889 17.0126 3.90484 16.996 4.08981C16.9793 4.27477 16.9114 4.45143 16.8 4.6L14.25 8L16.8 11.4C16.9114 11.5486 16.9793 11.7252 16.996 11.9102C17.0126 12.0952 16.9775 12.2811 16.8944 12.4472C16.8114 12.6133 16.6837 12.753 16.5257 12.8507C16.3678 12.9483 16.1857 13 16 13H6C5.73478 13 5.48043 13.1054 5.29289 13.2929C5.10536 13.4804 5 13.7348 5 14V17C5 17.2652 4.89464 17.5196 4.70711 17.7071C4.51957 17.8946 4.26522 18 4 18C3.73478 18 3.48043 17.8946 3.29289 17.7071C3.10536 17.5196 3 17.2652 3 17V6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C4 3.46957 4.21071 2.96086 4.58579 2.58579C4.96086 2.21071 5.46957 2 6 2H10.586C11.1164 2.00011 11.625 2.2109 12 2.586L15.414 6C15.7891 6.37499 15.9999 6.88361 16 7.414V16C16 16.5304 15.7893 17.0391 15.4142 17.4142C15.0391 17.7893 14.5304 18 14 18H6C5.46957 18 4.96086 17.7893 4.58579 17.4142C4.21071 17.0391 4 16.5304 4 16V4ZM6 10C6 9.73478 6.10536 9.48043 6.29289 9.29289C6.48043 9.10536 6.73478 9 7 9H13C13.2652 9 13.5196 9.10536 13.7071 9.29289C13.8946 9.48043 14 9.73478 14 10C14 10.2652 13.8946 10.5196 13.7071 10.7071C13.5196 10.8946 13.2652 11 13 11H7C6.73478 11 6.48043 10.8946 6.29289 10.7071C6.10536 10.5196 6 10.2652 6 10ZM7 13C6.73478 13 6.48043 13.1054 6.29289 13.2929C6.10536 13.4804 6 13.7348 6 14C6 14.2652 6.10536 14.5196 6.29289 14.7071C6.48043 14.8946 6.73478 15 7 15H13C13.2652 15 13.5196 14.8946 13.7071 14.7071C13.8946 14.5196 14 14.2652 14 14C14 13.7348 13.8946 13.4804 13.7071 13.2929C13.5196 13.1054 13.2652 13 13 13H7Z" fill="#9CA3AF"/>
+                                                    </svg>                                                
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
+                                            <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
+                                            <path d="M9.41058 16.4226C9.56686 16.5789 9.77882 16.6667 9.99984 16.6667C10.2209 16.6667 10.4328 16.5789 10.5891 16.4226C10.7454 16.2663 10.8332 16.0543 10.8332 15.8333C10.8332 15.6123 10.7454 15.4004 10.5891 15.2441C10.4328 15.0878 10.2209 15 9.99984 15C9.77882 15 9.56686 15.0878 9.41058 15.2441C9.2543 15.4004 9.1665 15.6123 9.1665 15.8333C9.1665 16.0543 9.2543 16.2663 9.41058 16.4226Z" fill="#111928"/>
+                                            <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg> 
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50 ">
+                                <td class="w-4 p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex flex-col items-center justify-center">
+                                    <div class="order-status-table text-center flex items-center bg-gray-100 py-1 flex items-center justify-center rounded-md p-2">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.0001 14.4C9.69748 14.4 11.3253 13.7257 12.5256 12.5255C13.7258 11.3252 14.4001 9.69736 14.4001 7.99998C14.4001 6.30259 13.7258 4.67472 12.5256 3.47449C11.3253 2.27426 9.69748 1.59998 8.0001 1.59998C6.30271 1.59998 4.67485 2.27426 3.47461 3.47449C2.27438 4.67472 1.6001 6.30259 1.6001 7.99998C1.6001 9.69736 2.27438 11.3252 3.47461 12.5255C4.67485 13.7257 6.30271 14.4 8.0001 14.4ZM6.9657 5.83438C6.81482 5.68865 6.61273 5.60801 6.40298 5.60984C6.19322 5.61166 5.99257 5.69579 5.84424 5.84412C5.69592 5.99245 5.61178 6.1931 5.60996 6.40285C5.60814 6.61261 5.68877 6.81469 5.8345 6.96558L6.8689 7.99998L5.8345 9.03438C5.75809 9.10817 5.69714 9.19645 5.65522 9.29405C5.61329 9.39165 5.59122 9.49663 5.5903 9.60285C5.58937 9.70908 5.60962 9.81442 5.64984 9.91274C5.69006 10.0111 5.74947 10.1004 5.82458 10.1755C5.8997 10.2506 5.98902 10.31 6.08733 10.3502C6.18565 10.3905 6.291 10.4107 6.39722 10.4098C6.50344 10.4089 6.60842 10.3868 6.70602 10.3449C6.80362 10.3029 6.8919 10.242 6.9657 10.1656L8.0001 9.13117L9.0345 10.1656C9.18538 10.3113 9.38746 10.3919 9.59722 10.3901C9.80698 10.3883 10.0076 10.3042 10.156 10.1558C10.3043 10.0075 10.3884 9.80685 10.3902 9.5971C10.3921 9.38734 10.3114 9.18526 10.1657 9.03438L9.1313 7.99998L10.1657 6.96558C10.3114 6.81469 10.3921 6.61261 10.3902 6.40285C10.3884 6.1931 10.3043 5.99245 10.156 5.84412C10.0076 5.69579 9.80698 5.61166 9.59722 5.60984C9.38746 5.60801 9.18538 5.68865 9.0345 5.83438L8.0001 6.86878L6.9657 5.83438Z" fill="#111928"/>
+                                        </svg>   
+                                        <span class="block text-gray-800 ml-2 text-sm">Cancelled</span>
+                                    </div>
+                                    <div class="order-status-information mt-2">
+                                        <span class="block text-gray-900 text-xs ">Last Update:</span>
+                                        <span class="block update-time text-gray-500 text-xs mt-1">22.05.2022 16:45</span>
+                                        <span class="block last-time text-gray-400 text-xs mt-1">2d ago</span>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="store-table-box flex flex-col items-center justify-center">
+                                        <div class="store-img">
+                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        </div>
+                                        <div class="store-text">
+                                            <span class="block text-xs text-gray-900">SomePrintArt</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <div class="order-table-box">
+                                        <span class="block text-lg text-gray-700">22.05.2022</span>
+                                        <span class="block text-lg text-blue-600">#28284852923</span>
+                                        <span class="block text-lg text-red-800">Multiple (1/3)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center ">
+                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                       <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
+                                   </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-item-information mt-2">
+                                        <ul>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">#293848223</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Design:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Design#1</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Body:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Korkmaz Family</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Date & Year:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">23.04.1997</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs bg-orange-50 p-1">Qty:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">1</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <span class="block font-medium text-indigo-700 text-xl">$17.45</span>
+                                    <div class="carrier-table-img mt-2">
+                                        <img class="w-full h-full object-cover" src="assets/img/table-logo.png" alt="shipentegra logo">
+                                    </div>
+                                    <span class="mt-2 block font-light text-xs text-gray-900">Eko (4-7 days)</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col items-center justify-center">
+                                        <div class="order-connection-table text-center flex items-center justify-center bg-green-100 py-1 rounded-md p-2">
+                                            <svg class="w-3 h-3 text-green-800 font-medium" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            <span class="block text-green-800 ml-2 text-sm font-medium">Connected</span>
+                                        </div>
+                                        <div class="order-connection-text text-center">
+                                            <span class="block text-blue-700 font-medium text-lg">PW23K44DS</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="block text-green-700 text-xl font-medium">$3.45:</span>
+                                    <div class="ets-profit-desc flex items-center ">
+                                        <span class="block font-normal text-lg text-green-800">23%</span>
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 10C18.5 12.1217 17.6571 14.1566 16.1569 15.6569C14.6566 17.1571 12.6217 18 10.5 18C8.37827 18 6.34344 17.1571 4.84315 15.6569C3.34285 14.1566 2.5 12.1217 2.5 10C2.5 7.87827 3.34285 5.84344 4.84315 4.34315C6.34344 2.84285 8.37827 2 10.5 2C12.6217 2 14.6566 2.84285 16.1569 4.34315C17.6571 5.84344 18.5 7.87827 18.5 10ZM11.5 6C11.5 6.26522 11.3946 6.51957 11.2071 6.70711C11.0196 6.89464 10.7652 7 10.5 7C10.2348 7 9.98043 6.89464 9.79289 6.70711C9.60536 6.51957 9.5 6.26522 9.5 6C9.5 5.73478 9.60536 5.48043 9.79289 5.29289C9.98043 5.10536 10.2348 5 10.5 5C10.7652 5 11.0196 5.10536 11.2071 5.29289C11.3946 5.48043 11.5 5.73478 11.5 6ZM9.5 9C9.23478 9 8.98043 9.10536 8.79289 9.29289C8.60536 9.48043 8.5 9.73478 8.5 10C8.5 10.2652 8.60536 10.5196 8.79289 10.7071C8.98043 10.8946 9.23478 11 9.5 11V14C9.5 14.2652 9.60536 14.5196 9.79289 14.7071C9.98043 14.8946 10.2348 15 10.5 15H11.5C11.7652 15 12.0196 14.8946 12.2071 14.7071C12.3946 14.5196 12.5 14.2652 12.5 14C12.5 13.7348 12.3946 13.4804 12.2071 13.2929C12.0196 13.1054 11.7652 13 11.5 13V10C11.5 9.73478 11.3946 9.48043 11.2071 9.29289C11.0196 9.10536 10.7652 9 10.5 9H9.5Z" fill="#9CA3AF"/>
+                                        </svg>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-table-notes flex items-center justify-center">
+                                        <ul class="flex items-center">
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 13V5C18 4.46957 17.7893 3.96086 17.4142 3.58579C17.0391 3.21071 16.5304 3 16 3H4C3.46957 3 2.96086 3.21071 2.58579 3.58579C2.21071 3.96086 2 4.46957 2 5V13C2 13.5304 2.21071 14.0391 2.58579 14.4142C2.96086 14.7893 3.46957 15 4 15H7L10 18L13 15H16C16.5304 15 17.0391 14.7893 17.4142 14.4142C17.7893 14.0391 18 13.5304 18 13ZM5 7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H14C14.2652 6 14.5196 6.10536 14.7071 6.29289C14.8946 6.48043 15 6.73478 15 7C15 7.26522 14.8946 7.51957 14.7071 7.70711C14.5196 7.89464 14.2652 8 14 8H6C5.73478 8 5.48043 7.89464 5.29289 7.70711C5.10536 7.51957 5 7.26522 5 7ZM6 10C5.73478 10 5.48043 10.1054 5.29289 10.2929C5.10536 10.4804 5 10.7348 5 11C5 11.2652 5.10536 11.5196 5.29289 11.7071C5.48043 11.8946 5.73478 12 6 12H9C9.26522 12 9.51957 11.8946 9.70711 11.7071C9.89464 11.5196 10 11.2652 10 11C10 10.7348 9.89464 10.4804 9.70711 10.2929C9.51957 10.1054 9.26522 10 9 10H6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.20435 3.31607 4.44129 3.87868 3.87868C4.44129 3.31607 5.20435 3 6 3H16C16.1857 3 16.3678 3.05171 16.5257 3.14935C16.6837 3.24698 16.8114 3.38668 16.8944 3.55279C16.9775 3.71889 17.0126 3.90484 16.996 4.08981C16.9793 4.27477 16.9114 4.45143 16.8 4.6L14.25 8L16.8 11.4C16.9114 11.5486 16.9793 11.7252 16.996 11.9102C17.0126 12.0952 16.9775 12.2811 16.8944 12.4472C16.8114 12.6133 16.6837 12.753 16.5257 12.8507C16.3678 12.9483 16.1857 13 16 13H6C5.73478 13 5.48043 13.1054 5.29289 13.2929C5.10536 13.4804 5 13.7348 5 14V17C5 17.2652 4.89464 17.5196 4.70711 17.7071C4.51957 17.8946 4.26522 18 4 18C3.73478 18 3.48043 17.8946 3.29289 17.7071C3.10536 17.5196 3 17.2652 3 17V6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C4 3.46957 4.21071 2.96086 4.58579 2.58579C4.96086 2.21071 5.46957 2 6 2H10.586C11.1164 2.00011 11.625 2.2109 12 2.586L15.414 6C15.7891 6.37499 15.9999 6.88361 16 7.414V16C16 16.5304 15.7893 17.0391 15.4142 17.4142C15.0391 17.7893 14.5304 18 14 18H6C5.46957 18 4.96086 17.7893 4.58579 17.4142C4.21071 17.0391 4 16.5304 4 16V4ZM6 10C6 9.73478 6.10536 9.48043 6.29289 9.29289C6.48043 9.10536 6.73478 9 7 9H13C13.2652 9 13.5196 9.10536 13.7071 9.29289C13.8946 9.48043 14 9.73478 14 10C14 10.2652 13.8946 10.5196 13.7071 10.7071C13.5196 10.8946 13.2652 11 13 11H7C6.73478 11 6.48043 10.8946 6.29289 10.7071C6.10536 10.5196 6 10.2652 6 10ZM7 13C6.73478 13 6.48043 13.1054 6.29289 13.2929C6.10536 13.4804 6 13.7348 6 14C6 14.2652 6.10536 14.5196 6.29289 14.7071C6.48043 14.8946 6.73478 15 7 15H13C13.2652 15 13.5196 14.8946 13.7071 14.7071C13.8946 14.5196 14 14.2652 14 14C14 13.7348 13.8946 13.4804 13.7071 13.2929C13.5196 13.1054 13.2652 13 13 13H7Z" fill="#9CA3AF"/>
+                                                    </svg>                                                
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
+                                            <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
+                                            <path d="M9.41058 16.4226C9.56686 16.5789 9.77882 16.6667 9.99984 16.6667C10.2209 16.6667 10.4328 16.5789 10.5891 16.4226C10.7454 16.2663 10.8332 16.0543 10.8332 15.8333C10.8332 15.6123 10.7454 15.4004 10.5891 15.2441C10.4328 15.0878 10.2209 15 9.99984 15C9.77882 15 9.56686 15.0878 9.41058 15.2441C9.2543 15.4004 9.1665 15.6123 9.1665 15.8333C9.1665 16.0543 9.2543 16.2663 9.41058 16.4226Z" fill="#111928"/>
+                                            <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg> 
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-gray-50 ">
+                                <td class="w-4 p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex flex-col items-center justify-center">
+                                    <div class="order-status-table text-center flex items-center bg-indigo-100 py-1 flex items-center justify-center rounded-md p-2">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0687 3.66882C10.2163 3.516 10.3928 3.39411 10.588 3.31026C10.7832 3.2264 10.9932 3.18227 11.2056 3.18042C11.4181 3.17857 11.6288 3.21906 11.8254 3.29951C12.022 3.37996 12.2007 3.49876 12.3509 3.64899C12.5011 3.79922 12.6199 3.97786 12.7004 4.17449C12.7808 4.37113 12.8213 4.58182 12.8195 4.79426C12.8176 5.00671 12.7735 5.21666 12.6896 5.41187C12.6058 5.60708 12.4839 5.78363 12.3311 5.93122L9.93107 8.33122C9.63102 8.63118 9.22413 8.79968 8.79987 8.79968C8.37561 8.79968 7.96871 8.63118 7.66867 8.33122C7.51779 8.18549 7.31571 8.10486 7.10595 8.10668C6.89619 8.1085 6.69554 8.19264 6.54721 8.34097C6.39889 8.48929 6.31475 8.68994 6.31293 8.8997C6.31111 9.10946 6.39174 9.31154 6.53747 9.46242C7.13756 10.0623 7.95134 10.3993 8.79987 10.3993C9.64839 10.3993 10.4622 10.0623 11.0623 9.46242L13.4623 7.06242C14.0452 6.45889 14.3677 5.65057 14.3604 4.81154C14.3531 3.97251 14.0166 3.16991 13.4233 2.5766C12.83 1.9833 12.0274 1.64676 11.1884 1.63946C10.3493 1.63217 9.541 1.95472 8.93747 2.53762L7.73747 3.73762C7.66106 3.81142 7.60012 3.89969 7.55819 3.9973C7.51626 4.0949 7.49419 4.19988 7.49327 4.3061C7.49235 4.41232 7.51259 4.51767 7.55281 4.61598C7.59304 4.7143 7.65244 4.80362 7.72755 4.87874C7.80267 4.95385 7.89199 5.01325 7.99031 5.05348C8.08862 5.0937 8.19397 5.11395 8.30019 5.11302C8.40641 5.1121 8.51139 5.09003 8.60899 5.0481C8.7066 5.00618 8.79487 4.94523 8.86867 4.86882L10.0687 3.66882ZM6.06867 7.66882C6.36871 7.36887 6.77561 7.20036 7.19987 7.20036C7.62413 7.20036 8.03102 7.36887 8.33107 7.66882C8.40487 7.74523 8.49314 7.80618 8.59075 7.8481C8.68835 7.89003 8.79332 7.9121 8.89955 7.91302C9.00577 7.91395 9.11112 7.8937 9.20943 7.85348C9.30775 7.81325 9.39707 7.75385 9.47218 7.67874C9.5473 7.60362 9.6067 7.5143 9.64693 7.41598C9.68715 7.31767 9.70739 7.21232 9.70647 7.1061C9.70555 6.99988 9.68348 6.8949 9.64155 6.7973C9.59962 6.69969 9.53868 6.61142 9.46227 6.53762C8.86218 5.93771 8.04839 5.6007 7.19987 5.6007C6.35134 5.6007 5.53756 5.93771 4.93747 6.53762L2.53747 8.93762C2.23184 9.23281 1.98805 9.58591 1.82034 9.97633C1.65264 10.3667 1.56436 10.7866 1.56067 11.2115C1.55698 11.6364 1.63794 12.0578 1.79884 12.4511C1.95974 12.8443 2.19735 13.2016 2.49781 13.5021C2.79826 13.8025 3.15555 14.0402 3.54882 14.2011C3.94208 14.3619 4.36346 14.4429 4.78835 14.4392C5.21325 14.4355 5.63315 14.3473 6.02356 14.1795C6.41398 14.0118 6.76708 13.7681 7.06227 13.4624L8.26227 12.2624C8.33868 12.1886 8.39962 12.1003 8.44155 12.0027C8.48348 11.9051 8.50555 11.8002 8.50647 11.6939C8.50739 11.5877 8.48715 11.4824 8.44693 11.3841C8.4067 11.2857 8.3473 11.1964 8.27218 11.1213C8.19707 11.0462 8.10775 10.9868 8.00943 10.9466C7.91112 10.9063 7.80577 10.8861 7.69955 10.887C7.59332 10.8879 7.48835 10.91 7.39075 10.9519C7.29314 10.9939 7.20487 11.0548 7.13107 11.1312L5.93107 12.3312C5.78347 12.484 5.60692 12.6059 5.41172 12.6898C5.21651 12.7736 5.00656 12.8178 4.79411 12.8196C4.58166 12.8215 4.37098 12.781 4.17434 12.7005C3.97771 12.6201 3.79907 12.5013 3.64884 12.3511C3.49861 12.2008 3.3798 12.0222 3.29935 11.8255C3.21891 11.6289 3.17842 11.4182 3.18027 11.2058C3.18211 10.9933 3.22625 10.7834 3.31011 10.5882C3.39396 10.393 3.51585 10.2164 3.66867 10.0688L6.06867 7.66882Z" fill="#42389D"/>
+                                        </svg>   
+                                        <span class="block text-indigo-800 ml-2 text-sm">Awaiting Connection</span>
+                                    </div>
+                                    <div class="order-status-information mt-2">
+                                        <span class="block text-gray-900 text-xs ">Last Update:</span>
+                                        <span class="block update-time text-gray-500 text-xs mt-1">22.05.2022 16:45</span>
+                                        <span class="block last-time text-gray-400 text-xs mt-1">2d ago</span>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="store-table-box flex flex-col items-center justify-center">
+                                        <div class="store-img">
+                                            <img class="w-full h-full object-cover" src="assets/img/table-store-img.png" alt="Store Images">
+                                        </div>
+                                        <div class="store-text">
+                                            <span class="block text-xs text-gray-900">SomePrintArt</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <div class="order-table-box">
+                                        <span class="block text-lg text-gray-700">22.05.2022</span>
+                                        <span class="block text-lg text-blue-600">#28284852923</span>
+                                        <span class="block text-lg text-red-800">Multiple (1/3)</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center ">
+                                   <div class="order-table-image flex flex-col items-center justify-center">
+                                       <img class="w-full h-full object-cover" src="assets/img/order-table-image.png" alt="">
+                                   </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-item-information mt-2">
+                                        <ul>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Item ID:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">#293848223</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Design:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Design#1</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Body:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">Korkmaz Family</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs ">Date & Year:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">23.04.1997</p>
+                                            </li>
+                                            <li class="flex items-center mt-1.5">
+                                                <span class="font-medium text-gray-900 text-xs bg-orange-50 p-1">Qty:</span>
+                                                <p class="text-gray-900 text-xs font-light ml-1">1</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 flex flex-col items-center justify-center">
+                                    <span class="block font-medium text-indigo-700 text-xl">$17.45</span>
+                                    <div class="carrier-table-img mt-2">
+                                        <img class="w-full h-full object-cover" src="assets/img/table-logo.png" alt="shipentegra logo">
+                                    </div>
+                                    <span class="mt-2 block font-light text-xs text-gray-900">Eko (4-7 days)</span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="flex flex-col items-center justify-center">
+                                        <div class="order-connection-table text-center flex items-center justify-center bg-green-100 py-1 rounded-md p-2">
+                                            <svg class="w-3 h-3 text-green-800 font-medium" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            <span class="block text-green-800 ml-2 text-sm font-medium">Connected</span>
+                                        </div>
+                                        <div class="order-connection-text text-center">
+                                            <span class="block text-blue-700 font-medium text-lg">PW23K44DS</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="block text-green-700 text-xl font-medium">$3.45:</span>
+                                    <div class="ets-profit-desc flex items-center ">
+                                        <span class="block font-normal text-lg text-green-800">23%</span>
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 10C18.5 12.1217 17.6571 14.1566 16.1569 15.6569C14.6566 17.1571 12.6217 18 10.5 18C8.37827 18 6.34344 17.1571 4.84315 15.6569C3.34285 14.1566 2.5 12.1217 2.5 10C2.5 7.87827 3.34285 5.84344 4.84315 4.34315C6.34344 2.84285 8.37827 2 10.5 2C12.6217 2 14.6566 2.84285 16.1569 4.34315C17.6571 5.84344 18.5 7.87827 18.5 10ZM11.5 6C11.5 6.26522 11.3946 6.51957 11.2071 6.70711C11.0196 6.89464 10.7652 7 10.5 7C10.2348 7 9.98043 6.89464 9.79289 6.70711C9.60536 6.51957 9.5 6.26522 9.5 6C9.5 5.73478 9.60536 5.48043 9.79289 5.29289C9.98043 5.10536 10.2348 5 10.5 5C10.7652 5 11.0196 5.10536 11.2071 5.29289C11.3946 5.48043 11.5 5.73478 11.5 6ZM9.5 9C9.23478 9 8.98043 9.10536 8.79289 9.29289C8.60536 9.48043 8.5 9.73478 8.5 10C8.5 10.2652 8.60536 10.5196 8.79289 10.7071C8.98043 10.8946 9.23478 11 9.5 11V14C9.5 14.2652 9.60536 14.5196 9.79289 14.7071C9.98043 14.8946 10.2348 15 10.5 15H11.5C11.7652 15 12.0196 14.8946 12.2071 14.7071C12.3946 14.5196 12.5 14.2652 12.5 14C12.5 13.7348 12.3946 13.4804 12.2071 13.2929C12.0196 13.1054 11.7652 13 11.5 13V10C11.5 9.73478 11.3946 9.48043 11.2071 9.29289C11.0196 9.10536 10.7652 9 10.5 9H9.5Z" fill="#9CA3AF"/>
+                                        </svg>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="order-table-notes flex items-center justify-center">
+                                        <ul class="flex items-center">
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 13V5C18 4.46957 17.7893 3.96086 17.4142 3.58579C17.0391 3.21071 16.5304 3 16 3H4C3.46957 3 2.96086 3.21071 2.58579 3.58579C2.21071 3.96086 2 4.46957 2 5V13C2 13.5304 2.21071 14.0391 2.58579 14.4142C2.96086 14.7893 3.46957 15 4 15H7L10 18L13 15H16C16.5304 15 17.0391 14.7893 17.4142 14.4142C17.7893 14.0391 18 13.5304 18 13ZM5 7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H14C14.2652 6 14.5196 6.10536 14.7071 6.29289C14.8946 6.48043 15 6.73478 15 7C15 7.26522 14.8946 7.51957 14.7071 7.70711C14.5196 7.89464 14.2652 8 14 8H6C5.73478 8 5.48043 7.89464 5.29289 7.70711C5.10536 7.51957 5 7.26522 5 7ZM6 10C5.73478 10 5.48043 10.1054 5.29289 10.2929C5.10536 10.4804 5 10.7348 5 11C5 11.2652 5.10536 11.5196 5.29289 11.7071C5.48043 11.8946 5.73478 12 6 12H9C9.26522 12 9.51957 11.8946 9.70711 11.7071C9.89464 11.5196 10 11.2652 10 11C10 10.7348 9.89464 10.4804 9.70711 10.2929C9.51957 10.1054 9.26522 10 9 10H6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 6C3 5.20435 3.31607 4.44129 3.87868 3.87868C4.44129 3.31607 5.20435 3 6 3H16C16.1857 3 16.3678 3.05171 16.5257 3.14935C16.6837 3.24698 16.8114 3.38668 16.8944 3.55279C16.9775 3.71889 17.0126 3.90484 16.996 4.08981C16.9793 4.27477 16.9114 4.45143 16.8 4.6L14.25 8L16.8 11.4C16.9114 11.5486 16.9793 11.7252 16.996 11.9102C17.0126 12.0952 16.9775 12.2811 16.8944 12.4472C16.8114 12.6133 16.6837 12.753 16.5257 12.8507C16.3678 12.9483 16.1857 13 16 13H6C5.73478 13 5.48043 13.1054 5.29289 13.2929C5.10536 13.4804 5 13.7348 5 14V17C5 17.2652 4.89464 17.5196 4.70711 17.7071C4.51957 17.8946 4.26522 18 4 18C3.73478 18 3.48043 17.8946 3.29289 17.7071C3.10536 17.5196 3 17.2652 3 17V6Z" fill="#9CA3AF"/>
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="block ml-2">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C4 3.46957 4.21071 2.96086 4.58579 2.58579C4.96086 2.21071 5.46957 2 6 2H10.586C11.1164 2.00011 11.625 2.2109 12 2.586L15.414 6C15.7891 6.37499 15.9999 6.88361 16 7.414V16C16 16.5304 15.7893 17.0391 15.4142 17.4142C15.0391 17.7893 14.5304 18 14 18H6C5.46957 18 4.96086 17.7893 4.58579 17.4142C4.21071 17.0391 4 16.5304 4 16V4ZM6 10C6 9.73478 6.10536 9.48043 6.29289 9.29289C6.48043 9.10536 6.73478 9 7 9H13C13.2652 9 13.5196 9.10536 13.7071 9.29289C13.8946 9.48043 14 9.73478 14 10C14 10.2652 13.8946 10.5196 13.7071 10.7071C13.5196 10.8946 13.2652 11 13 11H7C6.73478 11 6.48043 10.8946 6.29289 10.7071C6.10536 10.5196 6 10.2652 6 10ZM7 13C6.73478 13 6.48043 13.1054 6.29289 13.2929C6.10536 13.4804 6 13.7348 6 14C6 14.2652 6.10536 14.5196 6.29289 14.7071C6.48043 14.8946 6.73478 15 7 15H13C13.2652 15 13.5196 14.8946 13.7071 14.7071C13.8946 14.5196 14 14.2652 14 14C14 13.7348 13.8946 13.4804 13.7071 13.2929C13.5196 13.1054 13.2652 13 13 13H7Z" fill="#9CA3AF"/>
+                                                    </svg>                                                
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
+                                            <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
+                                            <path d="M9.41058 16.4226C9.56686 16.5789 9.77882 16.6667 9.99984 16.6667C10.2209 16.6667 10.4328 16.5789 10.5891 16.4226C10.7454 16.2663 10.8332 16.0543 10.8332 15.8333C10.8332 15.6123 10.7454 15.4004 10.5891 15.2441C10.4328 15.0878 10.2209 15 9.99984 15C9.77882 15 9.56686 15.0878 9.41058 15.2441C9.2543 15.4004 9.1665 15.6123 9.1665 15.8333C9.1665 16.0543 9.2543 16.2663 9.41058 16.4226Z" fill="#111928"/>
+                                            <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg> 
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-footer flex items-center justify-between py-4 px-4 bg-white shadow-lg ">
+                        <div class="inline-flex items-center">
+                            <span class="text-sm font-medium text-gray-500 whitespace-nowrap">
+                                Items per Page 
+                            </span>
+                            <select id="countries" class=" ml-2 w-full bg-white border border-orange-600 text-orange-600 text-sm rounded-lg focus:outline-none block w-full px-2 py-1">
+                                <option selected disabled hidden >30</option>
+                                <option value="40">40</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                            </select>
+                        </div>
+                        <div class="inline-flex mt-2 xs:mt-0">
+                            <span class="inline-flex items-center font-medium text-sm text-gray-900 px-4">1-30 <p class="px-1 text-sm text-gray-500">of</p> 987</span>
+                          <button class="inline-flex items-center py-2 px-4 text-sm font-medium text-white bg-orange-600 rounded-lg border-0 ">
+                              <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                              Prev
+                          </button>
+                          <button class="ml-2 inline-flex items-center py-2.5 px-5 ml-2.5 text-sm font-medium text-white bg-orange-600 rounded-lg border-0  ">
+                              Next
+                              <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                          </button>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../path/to/flowbite/dist/datepicker.js"></script>
+<script src="https://unpkg.com/flowbite@1.4.7/dist/datepicker.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

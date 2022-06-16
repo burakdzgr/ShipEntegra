@@ -87,3 +87,6 @@ body{
 .content-top-tab-items ul li button{
     border-bottom: 2px solid transparent;
 }
+.mobile-content-menu{
+    transform: translate(0, 45px) !important;
+}

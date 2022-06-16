@@ -4,16 +4,18 @@ $(document).on("click","#nav-toggle",function(){
         $("#sidebar").removeClass("mobile-sidebar");
         $("#content").removeClass("content-full");
         $(".sidebar-items-badge").show(100);
-        $(".sidebar-items-text span").show(100)
-        $(".sidebar-items-second-icon").show();
+        $(".sidebar-items-text").show(100)
+        $(".sidebar-items-second-icon").show(100);
+        $(".sidebar-toggle-icon ").show(100);
         $("#social-list").removeClass("flex-col");
 
     }else {
         $("#sidebar").addClass("mobile-sidebar");
         $("#content").addClass("content-full");
         $("#social-list").addClass("flex-col");
-        $(".sidebar-items-badge").hide();
-        $(".sidebar-items-second-icon").hide();
-        $(".sidebar-items-text span").hide(100)
+        $(".sidebar-items-badge").hide(100);
+        $(".sidebar-toggle-icon ").hide(100);
+        $("#dropdown-example").hide(100)
+        $(".sidebar-items-text").hide(100)
     }
 });

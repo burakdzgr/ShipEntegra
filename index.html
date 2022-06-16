@@ -572,7 +572,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-right relative">
-                                    <button type="button" class="table-settings-btn font-medium text-blue-600 hover:underline">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline" id="dropdownBottomButton" data-dropdown-toggle="dropdownBottom" data-dropdown-placement="bottom">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
                                             <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
@@ -580,40 +580,40 @@
                                             <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg> 
                                     </button>
-                                    <div class="settings-nav absolute bg-white w-[200px] z-10 right-8 top-24 rounded-lg border top-24 rounded-lg">
-                                        <ul class="setting-nav-list text-center bg-white">
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Order Details</a>
+                                    <div id="dropdownBottom" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                                        <ul class="text-center bg-white">
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Order Details</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Approve Producing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Approve Producing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Select Carrier</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Select Carrier</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer Listing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer Listing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Message to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Message to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Show Order on Store</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Show Order on Store</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the Order Item</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the Order Item</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the SKU</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the SKU</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Create a Case</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Create a Case</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Cancel Request</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Cancel Request</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -770,7 +770,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-right relative">
-                                    <button type="button" class="table-settings-btn font-medium text-blue-600 hover:underline">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline" id="dropdownBottomButton" data-dropdown-toggle="dropdownBottom" data-dropdown-placement="bottom">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
                                             <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
@@ -778,40 +778,40 @@
                                             <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg> 
                                     </button>
-                                    <div class="settings-nav absolute bg-white w-[200px] z-10 right-8 top-24 rounded-lg border top-24 rounded-lg">
+                                    <div id="dropdownBottom" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                                         <ul class="setting-nav-list text-center bg-white">
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Order Details</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Order Details</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Approve Producing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Approve Producing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Select Carrier</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Select Carrier</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer Listing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer Listing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Message to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Message to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Show Order on Store</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Show Order on Store</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the Order Item</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the Order Item</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the SKU</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the SKU</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Create a Case</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Create a Case</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Cancel Request</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Cancel Request</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -976,7 +976,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-right relative">
-                                    <button type="button" class="table-settings-btn font-medium text-blue-600 hover:underline">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline" id="dropdownBottomButton" data-dropdown-toggle="dropdownBottom" data-dropdown-placement="bottom">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
                                             <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
@@ -984,40 +984,40 @@
                                             <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg> 
                                     </button>
-                                    <div class="settings-nav absolute bg-white w-[200px] z-10 right-8 top-24 rounded-lg border top-24 rounded-lg">
+                                    <div id="dropdownBottom" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                                         <ul class="setting-nav-list text-center bg-white">
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Order Details</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Order Details</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Approve Producing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Approve Producing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Select Carrier</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Select Carrier</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer Listing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer Listing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Message to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Message to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Show Order on Store</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Show Order on Store</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the Order Item</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the Order Item</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the SKU</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the SKU</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Create a Case</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Create a Case</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Cancel Request</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Cancel Request</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1174,7 +1174,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-right relative">
-                                    <button type="button" class="table-settings-btn font-medium text-blue-600 hover:underline">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline" id="dropdownBottomButton" data-dropdown-toggle="dropdownBottom" data-dropdown-placement="bottom">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
                                             <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
@@ -1182,40 +1182,40 @@
                                             <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg> 
                                     </button>
-                                    <div class="settings-nav absolute bg-white w-[200px] z-10 right-8 top-24 rounded-lg border top-24 rounded-lg">
+                                    <div id="dropdownBottom" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                                         <ul class="setting-nav-list text-center bg-white">
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Order Details</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Order Details</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Approve Producing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Approve Producing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Select Carrier</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Select Carrier</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer Listing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer Listing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Message to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Message to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Show Order on Store</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Show Order on Store</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the Order Item</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the Order Item</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the SKU</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the SKU</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Create a Case</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Create a Case</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Cancel Request</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Cancel Request</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1371,7 +1371,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-right relative">
-                                    <button type="button" class="table-settings-btn font-medium text-blue-600 hover:underline">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline" id="dropdownBottomButton" data-dropdown-toggle="dropdownBottom" data-dropdown-placement="bottom">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
                                             <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
@@ -1379,40 +1379,40 @@
                                             <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg> 
                                     </button>
-                                    <div class="settings-nav absolute bg-white w-[200px] z-10 right-8 top-24 rounded-lg border top-24 rounded-lg">
+                                    <div id="dropdownBottom" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                                         <ul class="setting-nav-list text-center bg-white">
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Order Details</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Order Details</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Approve Producing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Approve Producing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Select Carrier</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Select Carrier</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer Listing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer Listing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Message to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Message to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Show Order on Store</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Show Order on Store</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the Order Item</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the Order Item</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the SKU</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the SKU</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Create a Case</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Create a Case</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Cancel Request</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Cancel Request</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1568,7 +1568,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-right relative">
-                                    <button type="button" class="table-settings-btn font-medium text-blue-600 hover:underline">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline" id="dropdownBottomButton" data-dropdown-toggle="dropdownBottom" data-dropdown-placement="bottom">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
                                             <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
@@ -1576,40 +1576,40 @@
                                             <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg> 
                                     </button>
-                                    <div class="settings-nav absolute bg-white w-[200px] z-10 right-8 top-24 rounded-lg border top-24 rounded-lg">
+                                    <div id="dropdownBottom" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                                         <ul class="setting-nav-list text-center bg-white">
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Order Details</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Order Details</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Approve Producing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Approve Producing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Select Carrier</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Select Carrier</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer Listing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer Listing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Message to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Message to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Show Order on Store</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Show Order on Store</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the Order Item</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the Order Item</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the SKU</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the SKU</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Create a Case</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Create a Case</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Cancel Request</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Cancel Request</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1765,7 +1765,7 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 text-right relative">
-                                    <button type="button" class="table-settings-btn font-medium text-blue-600 hover:underline">
+                                    <button type="button" class="font-medium text-blue-600 hover:underline" id="dropdownBottomButton" data-dropdown-toggle="dropdownBottom" data-dropdown-placement="bottom">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9.41058 4.75592C9.56686 4.9122 9.77882 5 9.99984 5C10.2209 5 10.4328 4.9122 10.5891 4.75592C10.7454 4.59964 10.8332 4.38768 10.8332 4.16667C10.8332 3.94565 10.7454 3.73369 10.5891 3.57741C10.4328 3.42113 10.2209 3.33333 9.99984 3.33333C9.77882 3.33333 9.56686 3.42113 9.41058 3.57741C9.2543 3.73369 9.1665 3.94565 9.1665 4.16667C9.1665 4.38768 9.2543 4.59964 9.41058 4.75592Z" fill="#111928"/>
                                             <path d="M9.41058 10.5893C9.56686 10.7455 9.77882 10.8333 9.99984 10.8333C10.2209 10.8333 10.4328 10.7455 10.5891 10.5893C10.7454 10.433 10.8332 10.221 10.8332 10C10.8332 9.77899 10.7454 9.56702 10.5891 9.41074C10.4328 9.25446 10.2209 9.16667 9.99984 9.16667C9.77882 9.16667 9.56686 9.25446 9.41058 9.41074C9.2543 9.56702 9.1665 9.77899 9.1665 10C9.1665 10.221 9.2543 10.433 9.41058 10.5893Z" fill="#111928"/>
@@ -1773,40 +1773,40 @@
                                             <path d="M9.99984 4.16667V4.175M9.99984 10V10.0083M9.99984 15.8333V15.8417M9.99984 5C9.77882 5 9.56686 4.9122 9.41058 4.75592C9.2543 4.59964 9.1665 4.38768 9.1665 4.16667C9.1665 3.94565 9.2543 3.73369 9.41058 3.57741C9.56686 3.42113 9.77882 3.33333 9.99984 3.33333C10.2209 3.33333 10.4328 3.42113 10.5891 3.57741C10.7454 3.73369 10.8332 3.94565 10.8332 4.16667C10.8332 4.38768 10.7454 4.59964 10.5891 4.75592C10.4328 4.9122 10.2209 5 9.99984 5ZM9.99984 10.8333C9.77882 10.8333 9.56686 10.7455 9.41058 10.5893C9.2543 10.433 9.1665 10.221 9.1665 10C9.1665 9.77899 9.2543 9.56702 9.41058 9.41074C9.56686 9.25446 9.77882 9.16667 9.99984 9.16667C10.2209 9.16667 10.4328 9.25446 10.5891 9.41074C10.7454 9.56702 10.8332 9.77899 10.8332 10C10.8332 10.221 10.7454 10.433 10.5891 10.5893C10.4328 10.7455 10.2209 10.8333 9.99984 10.8333ZM9.99984 16.6667C9.77882 16.6667 9.56686 16.5789 9.41058 16.4226C9.2543 16.2663 9.1665 16.0543 9.1665 15.8333C9.1665 15.6123 9.2543 15.4004 9.41058 15.2441C9.56686 15.0878 9.77882 15 9.99984 15C10.2209 15 10.4328 15.0878 10.5891 15.2441C10.7454 15.4004 10.8332 15.6123 10.8332 15.8333C10.8332 16.0543 10.7454 16.2663 10.5891 16.4226C10.4328 16.5789 10.2209 16.6667 9.99984 16.6667Z" stroke="#111928" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg> 
                                     </button>
-                                    <div class="settings-nav absolute bg-white w-[200px] z-10 right-8 top-24 rounded-lg border top-24 rounded-lg">
+                                    <div id="dropdownBottom" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                                         <ul class="setting-nav-list text-center bg-white">
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Order Details</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Order Details</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Approve Producing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Approve Producing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Select Carrier</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Select Carrier</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer Listing</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer Listing</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Go to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Go to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Message to Producer</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Message to Producer</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Show Order on Store</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Show Order on Store</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the Order Item</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the Order Item</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Hide the SKU</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Hide the SKU</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Create a Case</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Create a Case</a>
                                             </li>
-                                            <li class="p-1.5 mt-1">
-                                                <a href="javascript:;" class="block text-sm font-medium text-gray-900">Cancel Request</a>
+                                            <li>
+                                                <a href="javascript:;" class="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100">Cancel Request</a>
                                             </li>
                                         </ul>
                                     </div>

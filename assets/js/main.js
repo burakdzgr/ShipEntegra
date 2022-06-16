@@ -1,4 +1,3 @@
-
 $(document).on("click","#nav-toggle",function(){
     var checkClass = $("#sidebar").hasClass("mobile-sidebar");
     if ( checkClass ){
@@ -17,10 +16,4 @@ $(document).on("click","#nav-toggle",function(){
         $(".sidebar-items-second-icon").hide();
         $(".sidebar-items-text span").hide(100)
     }
-});
-
-$(document).ready(function() {
-    $('.table-settings-btn').click(function() {
-        $('.settings-nav').toggleClass('show').this();
-    });
 });

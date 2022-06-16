@@ -87,13 +87,3 @@ body{
 .content-top-tab-items ul li button{
     border-bottom: 2px solid transparent;
 }
-.settings-nav{
-    display: none;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-}
-.show{
-    display: block;
-}

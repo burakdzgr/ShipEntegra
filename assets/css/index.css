@@ -87,3 +87,38 @@ body{
 .content-top-tab-items ul li button{
     border-bottom: 2px solid transparent;
 }
+.settings-nav{
+    display: none;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.show{
+    display: block;
+}
+.info-tooltip{
+    display: none;
+}
+.info-icon-2:hover .info-tooltip{
+    display: block;
+}
+.info-icon:hover .info-tooltip{
+    display: block;
+}
+.info:hover .info-tooltip{
+    display: block;
+}
+.info-tooltip::before{
+    content: '';
+    position: absolute;
+    border-color: #ffffff00 #ffffff00 #F3F4F6 #ffffff00;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    width: 1px;
+    height: 0px;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50% , 0);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}

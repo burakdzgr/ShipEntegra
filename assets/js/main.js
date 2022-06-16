@@ -1,10 +1,4 @@
-function checkScreen(e){
-    if (window.matchMedia('(max-width: 767px)').matches){
-        console.log(e);
-    }else{
-        console.log(e);
-    }
-}
+
 $(document).on("click","#nav-toggle",function(){
     var checkClass = $("#sidebar").hasClass("mobile-sidebar");
     if ( checkClass ){
@@ -25,3 +19,8 @@ $(document).on("click","#nav-toggle",function(){
     }
 });
 
+$(document).ready(function() {
+    $('.table-settings-btn').click(function() {
+        $('.settings-nav').toggleClass('show').this();
+    });
+});
